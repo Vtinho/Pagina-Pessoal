@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState, type FormEvent } from "react";
 import type { ContactContent } from "@/content/types";
-import { HONEYPOT_FIELD, LIMITS } from "@/lib/contact-schema";
+import { HONEYPOT_FIELD, LIMITS } from "@/lib/contact-fields";
 
 type ApiErrorCode =
   | "BAD_REQUEST"

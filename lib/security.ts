@@ -39,7 +39,7 @@ export function buildCsp(nonce: string): string {
 
     "font-src 'self'",
 
-    "img-src 'self' data: blob:",
+    "img-src 'self' data:",
 
     "object-src 'none'",
 
@@ -54,7 +54,7 @@ export function buildCsp(nonce: string): string {
 
     "media-src 'none'",
 
-    "worker-src 'self' blob:",
+    "worker-src 'self'",
 
     "manifest-src 'self'",
 

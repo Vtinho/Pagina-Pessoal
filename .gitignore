@@ -40,3 +40,8 @@ yarn-error.log*
 
 # Guia detalhado do projeto - uso pessoal, nao vai para o repositorio publico.
 GUIA.local.md
+
+# Gerados automaticamente pelo 
+ext dev.
+AGENTS.md
+CLAUDE.md

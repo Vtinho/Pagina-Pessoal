@@ -6,7 +6,6 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ParticleField } from "@/components/ParticleField";
 import { Projects } from "@/components/Projects";
 import { SecuritySection } from "@/components/SecuritySection";
 import { Skills } from "@/components/Skills";
@@ -28,7 +27,6 @@ export default async function HomePage({ params }: { params: Params }) {
         {content.ui.skipToContent}
       </a>
 
-      <ParticleField />
 
       <Header locale={lang} content={content} />
 

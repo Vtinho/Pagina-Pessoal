@@ -1,14 +1,8 @@
 import { z } from "zod";
+import { CONTACT_FIELDS, HONEYPOT_FIELD, LIMITS, type ContactField } from "./contact-fields";
 
-export const LIMITS = {
-  name: { min: 2, max: 80 },
-  email: { min: 5, max: 254 }, // 254 é o máximo de um endereço válido (RFC 5321)
-  message: { min: 10, max: 2000 },
-} as const;
-
-export const MAX_BODY_BYTES = 8 * 1024;
-
-export const HONEYPOT_FIELD = "website";
+export { LIMITS, MAX_BODY_BYTES, HONEYPOT_FIELD, CONTACT_FIELDS } from "./contact-fields";
+export type { ContactField } from "./contact-fields";
 
 // Proibir caractere de controle em name/email fecha a injeção de cabeçalho
 // de e-mail: um nome com quebra de linha permitiria inserir um Bcc quando o
@@ -54,9 +48,6 @@ export const contactSchema = z.strictObject({
 });
 
 export type ContactPayload = z.infer<typeof contactSchema>;
-
-export const CONTACT_FIELDS = ["name", "email", "message"] as const;
-export type ContactField = (typeof CONTACT_FIELDS)[number];
 
 export function invalidFields(error: z.ZodError): ContactField[] {
   const fields = new Set<ContactField>();
