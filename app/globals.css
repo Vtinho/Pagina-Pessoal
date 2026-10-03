@@ -99,7 +99,10 @@ h4 {
   }
 }
 
-.reveal {
+/* Visivel por padrao. Quem esconde e o JavaScript, marcando data-visible
+   ="false" logo antes de animar (ver components/Reveal.tsx). Sem JS, nenhum
+   atributo e definido e a pagina aparece inteira. */
+.reveal[data-visible="false"] {
   opacity: 0;
 }
 
@@ -107,15 +110,17 @@ h4 {
   animation: reveal-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Mesma logica nas barras de skill: cheias por padrao, zeradas apenas quando
+   o bloco em volta foi escondido para animar. */
 .skill-bar-fill {
-  transform: scaleX(0);
+  transform: scaleX(var(--level-scale));
   transform-box: fill-box;
   transform-origin: left center;
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-[data-visible="true"] .skill-bar-fill {
-  transform: scaleX(var(--level-scale));
+[data-visible="false"] .skill-bar-fill {
+  transform: scaleX(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -132,7 +137,7 @@ h4 {
     scroll-behavior: auto !important;
   }
 
-  .reveal {
+  .reveal[data-visible="false"] {
     opacity: 1 !important;
   }
 

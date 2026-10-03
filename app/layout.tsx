@@ -29,12 +29,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       className={`${inter.variable} ${jetbrainsMono.variable}`}
       translate="no"
     >
-      <body className="bg-page text-text font-sans antialiased">
-        <noscript>
-          <style>{`.reveal{opacity:1!important}.skill-bar-fill{transform:scaleX(var(--level-scale))!important;transition:none!important}`}</style>
-        </noscript>
-        {children}
-      </body>
+      <body className="bg-page text-text font-sans antialiased">{children}</body>
     </html>
   );
 }
