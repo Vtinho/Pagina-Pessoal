@@ -1,0 +1,20 @@
+# Normaliza fim de linha: o repositorio guarda LF, cada sistema recebe o seu.
+* text=auto
+
+# Arquivos que NUNCA podem sofrer conversao de fim de linha.
+#
+# Isto nao e precaucao teorica: os PDFs deste projeto nao contem byte NUL, e
+# por isso o git os classifica como texto. Com a conversao LF -> CRLF no
+# Windows, cada quebra de linha ganha um byte e todos os offsets da tabela
+# xref do PDF saem do lugar - o arquivo abre corrompido.
+*.pdf   -text
+*.png   -text
+*.jpg   -text
+*.jpeg  -text
+*.gif   -text
+*.ico   -text
+*.webp  -text
+*.woff  -text
+*.woff2 -text
+*.ttf   -text
+*.otf   -text

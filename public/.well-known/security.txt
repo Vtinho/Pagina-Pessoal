@@ -1,0 +1,18 @@
+# security.txt — RFC 9116
+# Diz a um pesquisador de segurança como te reportar uma vulnerabilidade.
+# Servido em: https://SEU-DOMINIO/.well-known/security.txt
+#
+# TODO: trocar SEU-DOMINIO pelo domínio real quando o site for publicado.
+# TODO: renovar o campo Expires antes de 2027-09-29 (a RFC exige data futura;
+#       um security.txt expirado é ignorado pelos scanners).
+
+Contact: mailto:vitormanzotti@gmail.com
+Expires: 2027-09-29T23:59:59.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://SEU-DOMINIO/.well-known/security.txt
+
+# Onde eu falo sobre a segurança deste site:
+Policy: https://SEU-DOMINIO/pt#seguranca
+
+# Agradecimentos públicos a quem reportar (crie a página se quiser):
+# Acknowledgments: https://SEU-DOMINIO/pt#seguranca
