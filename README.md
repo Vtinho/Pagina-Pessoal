@@ -26,13 +26,6 @@ seção **Segurança**; em resumo:
 
 Encontrou uma falha? O canal de contato está no `security.txt`.
 
-## Rodar localmente
-
-```bash
-npm install
-npm run dev
-```
-
 ## Licença
 
 Código sob [MIT](LICENSE). O conteúdo pessoal — textos, foto e currículo — não
