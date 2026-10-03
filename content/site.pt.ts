@@ -371,9 +371,9 @@ export const pt: SiteContent = {
         {
           id: "secrets",
           title: "Segredos só em variáveis de ambiente",
-          what: "Nenhuma chave no código. O .env está no .gitignore e há um .env.example versionado, sem valores.",
+          what: "Nenhuma chave no código. Tudo que é segredo vive em variável de ambiente, e todo arquivo .env está no .gitignore.",
           why: "Chave comitada no Git fica no histórico para sempre, mesmo depois de apagada — e bots varrem o GitHub procurando exatamente isso.",
-          where: ".env.example + .gitignore",
+          where: ".gitignore",
         },
         {
           id: "security-txt",

@@ -45,3 +45,6 @@ GUIA.local.md
 ext dev.
 AGENTS.md
 CLAUDE.md
+
+# Modelo de variaveis de ambiente - uso local, fora do repositorio publico.
+.env.example

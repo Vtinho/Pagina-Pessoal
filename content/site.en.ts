@@ -357,9 +357,9 @@ export const en: SiteContent = {
         {
           id: "secrets",
           title: "Secrets in environment variables only",
-          what: "No key in the code. .env is gitignored and a valueless .env.example is committed instead.",
+          what: "No key in the code. Every secret lives in an environment variable, and every .env file is gitignored.",
           why: "A key committed to Git stays in history forever, even after you delete it — and bots scan GitHub for exactly that.",
-          where: ".env.example + .gitignore",
+          where: ".gitignore",
         },
         {
           id: "security-txt",
