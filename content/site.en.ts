@@ -399,7 +399,7 @@ export const en: SiteContent = {
         },
       ],
       disclaimer:
-        "An honest caveat: a high scanner grade means the headers are right, not that the application is secure. Scanners do not test business logic, authentication or broken authorization. That is why I also test the form by hand — the checklist is in the repository README.",
+        "An honest caveat: a high scanner grade means the headers are right, not that the application is secure. Scanners do not test business logic, authentication or broken authorization. That is why I also test the form by hand, with Burp Suite and OWASP ZAP.",
     },
   },
 

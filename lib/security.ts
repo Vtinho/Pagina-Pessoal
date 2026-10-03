@@ -33,8 +33,8 @@ export function buildCsp(nonce: string): string {
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`,
 
     // Única exceção da política: o Next injeta <style> inline sem nonce.
-    // Remover 'unsafe-inline' aqui quebra o estilo em silêncio. Ver README,
-    // seção 7. script-src continua sem unsafe-inline e sem unsafe-eval.
+    // Remover 'unsafe-inline' aqui quebra o estilo em silêncio.
+    // script-src continua sem unsafe-inline e sem unsafe-eval.
     "style-src 'self' 'unsafe-inline'",
 
     "font-src 'self'",
@@ -66,7 +66,7 @@ export function buildCsp(nonce: string): string {
   }
 
   // TODO (opcional): para receber relatório de violação de CSP, adicione a
-  // diretiva report-to e o header Reporting-Endpoints. Ver seção 7 do README.
+  // diretiva report-to e o header Reporting-Endpoints.
 
   return directives.join("; ");
 }

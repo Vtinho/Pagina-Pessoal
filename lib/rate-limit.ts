@@ -1,6 +1,6 @@
 // Rate limit em memória NÃO é confiável em serverless: cada instância tem o
 // próprio Map e o contador zera no cold start. É mitigação, não garantia.
-// Para migrar ao Upstash Redis, ver a seção 10 do README.
+// Para migrar ao Upstash Redis, ver GUIA.local.md.
 export const RATE_LIMIT_MAX = 5;
 
 export const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
