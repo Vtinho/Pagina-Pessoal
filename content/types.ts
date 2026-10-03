@@ -22,7 +22,6 @@ export interface TimelineItem {
 
 export interface Skill {
   name: string;
-  level: number;
   note: string;
 }
 
@@ -124,7 +123,6 @@ export interface SkillsContent {
   kicker: string;
   heading: string;
   intro: string;
-  levelLabel: string;
   groups: SkillGroup[];
 }
 

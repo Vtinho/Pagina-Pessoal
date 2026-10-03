@@ -110,19 +110,6 @@ h4 {
   animation: reveal-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Mesma logica nas barras de skill: cheias por padrao, zeradas apenas quando
-   o bloco em volta foi escondido para animar. */
-.skill-bar-fill {
-  transform: scaleX(var(--level-scale));
-  transform-box: fill-box;
-  transform-origin: left center;
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-[data-visible="false"] .skill-bar-fill {
-  transform: scaleX(0);
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

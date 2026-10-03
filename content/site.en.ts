@@ -116,17 +116,16 @@ export const en: SiteContent = {
     heading: "Tools I work with",
     intro:
       "An honest self-assessment, not a certificate. If something sits at 60%, it means I still check the docs — and I would rather say that here than find out in a technical interview.",
-    levelLabel: "level",
     groups: [
       {
         id: "data",
         label: "Data",
         caption: "Extract, clean, join and explain.",
         skills: [
-          { name: "Python", level: 80, note: "pandas, requests, ETL scripts" },
-          { name: "SQL (MySQL)", level: 75, note: "joins, aggregations, views" },
-          { name: "Excel / VBA", level: 85, note: "macros, pivot tables" },
-          { name: "PDF data extraction", level: 75, note: "pdfplumber, regex" },
+          { name: "Python", note: "pandas, requests, ETL scripts" },
+          { name: "SQL (MySQL)", note: "joins, aggregations, views" },
+          { name: "Excel / VBA", note: "macros, pivot tables" },
+          { name: "PDF data extraction", note: "pdfplumber, regex" },
         ],
       },
       {
@@ -134,9 +133,9 @@ export const en: SiteContent = {
         label: "Automation",
         caption: "Take the human out of the repetitive loop.",
         skills: [
-          { name: "Power Automate", level: 80, note: "flows, connectors, approvals" },
-          { name: "Automation with Python", level: 75, note: "scheduling, integrations" },
-          { name: "Git / GitHub", level: 65, note: "branches, pull requests" },
+          { name: "Power Automate", note: "flows, connectors, approvals" },
+          { name: "Automation with Python", note: "scheduling, integrations" },
+          { name: "Git / GitHub", note: "branches, pull requests" },
         ],
       },
       {
@@ -144,9 +143,9 @@ export const en: SiteContent = {
         label: "Security",
         caption: "What I study — see the Security section below.",
         skills: [
-          { name: "Web security (OWASP Top 10)", level: 55, note: "XSS, injection, CSRF" },
-          { name: "Burp Suite", level: 40, note: "proxy, repeater, intruder" },
-          { name: "Application hardening", level: 50, note: "CSP, headers, validation" },
+          { name: "Web security (OWASP Top 10)", note: "XSS, injection, CSRF" },
+          { name: "Burp Suite", note: "proxy, repeater, intruder" },
+          { name: "Application hardening", note: "CSP, headers, validation" },
         ],
       },
     ],

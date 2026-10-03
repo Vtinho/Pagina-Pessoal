@@ -15,7 +15,7 @@ import { LOCALES } from "@/lib/i18n";
  *
  *   - um idioma com 2 projetos e o outro com 3;
  *   - o mesmo projeto com `id` diferente entre os arquivos;
- *   - um nível de skill mudado só no português;
+ *   - uma skill a mais em um idioma que no outro;
  *   - uma tradução esquecida (texto idêntico ao do outro idioma);
  *   - um "TODO" que sobrou depois que você achou que tinha preenchido tudo.
  *
@@ -88,19 +88,14 @@ describe("dados que precisam ser idênticos nos dois idiomas", () => {
     expect(en.skills.groups.map((g) => g.id)).toEqual(pt.skills.groups.map((g) => g.id));
   });
 
-  it("as skills têm os mesmos níveis nos dois idiomas", () => {
+  it("cada grupo tem a mesma quantidade de skills nos dois idiomas", () => {
     pt.skills.groups.forEach((group, groupIndex) => {
       const other = en.skills.groups[groupIndex];
       expect(other, `grupo ${group.id} não existe em en`).toBeDefined();
-
-      group.skills.forEach((skill, skillIndex) => {
-        const twin = other?.skills[skillIndex];
-
-        expect(twin, `${group.id}[${skillIndex}] não existe em en`).toBeDefined();
-        expect(twin?.level, `nível de "${skill.name}" difere entre pt e en`).toBe(
-          skill.level,
-        );
-      });
+      expect(
+        other?.skills.length,
+        `grupo ${group.id} tem ${group.skills.length} skill(s) em pt e ${other?.skills.length} em en`,
+      ).toBe(group.skills.length);
     });
   });
 
@@ -193,11 +188,11 @@ describe("consistência do idioma", () => {
 });
 
 describe("sanidade do conteúdo", () => {
-  it("nenhum nível de skill fica fora do intervalo 0-100", () => {
+  it("toda skill tem nome e nota preenchidos", () => {
     for (const group of pt.skills.groups) {
       for (const skill of group.skills) {
-        expect(skill.level, `${skill.name}`).toBeGreaterThanOrEqual(0);
-        expect(skill.level, `${skill.name}`).toBeLessThanOrEqual(100);
+        expect(skill.name.trim().length, `nome vazio em ${group.id}`).toBeGreaterThan(0);
+        expect(skill.note.trim().length, `nota vazia em "${skill.name}"`).toBeGreaterThan(0);
       }
     }
   });

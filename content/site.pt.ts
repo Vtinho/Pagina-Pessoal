@@ -129,7 +129,6 @@ export const pt: SiteContent = {
     heading: "Ferramentas que eu uso",
     intro:
       "Autoavaliação honesta, não certificado. Se algo aqui está em 60%, é porque eu ainda consulto documentação — e prefiro dizer isso do que descobrir na entrevista técnica.",
-    levelLabel: "nível",
     groups: [
       {
         id: "data",
@@ -137,10 +136,10 @@ export const pt: SiteContent = {
         caption: "Extrair, limpar, cruzar e explicar.",
         skills: [
           // TODO: ajustar os níveis. Precisam ser IDÊNTICOS em site.en.ts (o teste de paridade verifica).
-          { name: "Python", level: 80, note: "pandas, requests, scripts de ETL" },
-          { name: "SQL (MySQL)", level: 75, note: "joins, agregações, views" },
-          { name: "Excel / VBA", level: 85, note: "macros, tabelas dinâmicas" },
-          { name: "Extração de dados de PDF", level: 75, note: "pdfplumber, regex" },
+          { name: "Python", note: "pandas, requests, scripts de ETL" },
+          { name: "SQL (MySQL)", note: "joins, agregações, views" },
+          { name: "Excel / VBA", note: "macros, tabelas dinâmicas" },
+          { name: "Extração de dados de PDF", note: "pdfplumber, regex" },
         ],
       },
       {
@@ -148,9 +147,9 @@ export const pt: SiteContent = {
         label: "Automação",
         caption: "Tirar o humano do meio do caminho repetitivo.",
         skills: [
-          { name: "Power Automate", level: 80, note: "fluxos, conectores, aprovações" },
-          { name: "Automação com Python", level: 75, note: "agendamento, integrações" },
-          { name: "Git / GitHub", level: 65, note: "branches, pull requests" },
+          { name: "Power Automate", note: "fluxos, conectores, aprovações" },
+          { name: "Automação com Python", note: "agendamento, integrações" },
+          { name: "Git / GitHub", note: "branches, pull requests" },
         ],
       },
       {
@@ -158,9 +157,9 @@ export const pt: SiteContent = {
         label: "Segurança",
         caption: "Área que estudo — ver a seção de Segurança abaixo.",
         skills: [
-          { name: "Segurança web (OWASP Top 10)", level: 55, note: "XSS, injeção, CSRF" },
-          { name: "Burp Suite", level: 40, note: "proxy, repeater, intruder" },
-          { name: "Hardening de aplicação", level: 50, note: "CSP, headers, validação" },
+          { name: "Segurança web (OWASP Top 10)", note: "XSS, injeção, CSRF" },
+          { name: "Burp Suite", note: "proxy, repeater, intruder" },
+          { name: "Hardening de aplicação", note: "CSP, headers, validação" },
         ],
       },
     ],
