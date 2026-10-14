@@ -238,6 +238,8 @@ export const en: SiteContent = {
             "Hands-on labs on web vulnerabilities: SQL injection, XSS, CSRF, SSRF and access control.",
           tag: "lab",
           url: "https://portswigger.net/web-security",
+          // TODO: mesmo número de site.pt.ts.
+          progress: "39 labs completed — 26 apprentice, 13 practitioner",
         },
         {
           id: "burp",

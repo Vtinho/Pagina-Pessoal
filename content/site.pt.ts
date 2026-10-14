@@ -251,6 +251,8 @@ export const pt: SiteContent = {
             "Laboratórios práticos de vulnerabilidades web: SQL injection, XSS, CSRF, SSRF e controle de acesso.",
           tag: "laboratório",
           url: "https://portswigger.net/web-security",
+          // TODO: atualize conforme avançar nos labs.
+          progress: "39 labs concluídos — 26 apprentice, 13 practitioner",
         },
         {
           id: "burp",
