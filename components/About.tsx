@@ -39,29 +39,11 @@ export function About({ content }: { content: SiteContent }) {
 
         <Reveal className="order-first md:order-last">
           <figure className="relative mx-auto w-40 sm:w-48 md:w-full">
-            {/*
-              next/image em vez de <img>.
-
-              O que ele faz por você: converte para WebP/AVIF, gera as versões
-              por tamanho de tela, e — o mais importante para o layout —
-              reserva o espaço antes da imagem chegar, evitando que o texto
-              "salte" durante o carregamento (o CLS que o Lighthouse mede).
-
-              `width`/`height` definem a PROPORÇÃO, não o tamanho final: o
-              tamanho quem manda é o CSS.
-
-              TODO: TROQUE A FOTO.
-                1. Coloque a sua imagem em public/ (800x800, quadrada — o
-                   recorte é circular, então centralize o rosto).
-                2. Ajuste o `src` abaixo para o nome do seu arquivo.
-                   Se for .jpg, o caminho vira "/sua-foto.jpg".
-              O placeholder atual é um PNG gerado para o tema do site.
-            */}
             <Image
-              src="/foto-placeholder.png"
+              src="/foto.jpg"
               alt={about.photoAlt}
-              width={800}
-              height={800}
+              width={200}
+              height={200}
               className="aspect-square w-full rounded-full border border-line object-cover grayscale transition-all duration-500 hover:grayscale-0"
               sizes="(max-width: 768px) 12rem, 240px"
             />

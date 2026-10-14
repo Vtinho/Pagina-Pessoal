@@ -90,8 +90,7 @@ export const pt: SiteContent = {
       "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas — e Power Automate para eliminar o trabalho repetitivo que sobra no meio do caminho.",
       "Em paralelo, estudo segurança da informação: laboratórios de segurança web, leitura de writeups e prática com ferramentas de análise. Este site é parte desse estudo — a seção de Segurança explica cada proteção que ele usa.",
     ],
-    // TODO: trocar a imagem em public/foto-placeholder.jpg e ajustar este alt.
-    photoAlt: "Vitor Manzotti",
+    photoAlt: "Vitor Manzotti, de camisa clara, olhando para a câmera",
     education: {
       heading: "Formação",
       items: [

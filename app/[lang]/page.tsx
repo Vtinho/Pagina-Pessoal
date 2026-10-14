@@ -59,7 +59,7 @@ function buildJsonLd(lang: string, content: ReturnType<typeof getContent>): stri
     jobTitle: content.hero.role,
     description: content.meta.description,
     url: `${base}/${lang}`,
-    image: `${base}/foto-placeholder.png`, // TODO: trocar junto com a foto
+    image: `${base}/foto.jpg`,
     sameAs: [
       "https://github.com/Vtinho",
       "https://www.linkedin.com/in/vitor-manzotti-5b0731290",
