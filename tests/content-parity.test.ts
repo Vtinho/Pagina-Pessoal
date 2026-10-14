@@ -100,7 +100,7 @@ describe("dados que precisam ser idênticos nos dois idiomas", () => {
   });
 
   it("nomes de produto não são traduzidos", () => {
-    const nomesProprios = ["Python", "SQL (MySQL)", "Power Automate", "Burp Suite"];
+    const nomesProprios = ["Python", "SQL", "Power Automate", "Docker", "Burp Suite"];
 
     const nomesPt = pt.skills.groups.flatMap((g) => g.skills.map((s) => s.name));
     const nomesEn = en.skills.groups.flatMap((g) => g.skills.map((s) => s.name));
@@ -263,8 +263,7 @@ describe("TODOs pendentes", () => {
     expect(true).toBe(true);
   });
 
-  it.skip("não sobrou nenhum TODO no conteúdo", () => {
-    // TODO: ative este teste (apague o `.skip`) quando terminar de preencher
+  it("não sobrou nenhum TODO no conteúdo", () => {
     expect([...findTodos(pt, "pt"), ...findTodos(en, "en")]).toEqual([]);
   });
 });

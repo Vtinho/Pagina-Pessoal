@@ -47,9 +47,12 @@ export function About({ content }: { content: SiteContent }) {
               className="aspect-square w-full rounded-full border border-line object-cover grayscale transition-all duration-500 hover:grayscale-0"
               sizes="(max-width: 768px) 12rem, 240px"
             />
+            {/* Anel concêntrico, com folga em volta da foto. A versão anterior
+                era deslocada 8px na diagonal e aparecia só como um arco no
+                canto, o que lê como desalinhamento em vez de decoração. */}
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 -z-10 translate-x-2 translate-y-2 rounded-full border border-accent/40"
+              className="pointer-events-none absolute -inset-3 -z-10 rounded-full border border-accent/25"
             />
           </figure>
         </Reveal>

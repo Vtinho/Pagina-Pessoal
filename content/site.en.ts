@@ -73,9 +73,9 @@ export const en: SiteContent = {
     heading: "About me",
     // TODO: rewrite in your own voice. One paragraph per array item.
     bio: [
-      "I am a Computer Science student at UFABC (Brazil) working in automation and process management, turning spreadsheets and manual routines into data flows that run on their own.",
-      "Day to day I use Python and SQL to extract, clean and join data scattered across PDFs, emails and spreadsheets — and Power Automate to remove the repetitive work left in between.",
-      "In parallel I study information security: web security labs, writeups, and hands-on practice with analysis tools. This site is part of that study — the Security section explains every protection it uses.",
+      "I am a Computer Science student at UFABC (Brazil), with around a year of experience in data analysis and process automation.",
+      "Day to day I use Python and SQL to extract, clean and join data scattered across PDFs, emails and spreadsheets — and Power BI when a number needs to become a decision. I currently do this in the natural gas sector, which is where the processes happen rather than my specialism: extracting, reconciling and analysing scattered data is the same problem in any industry.",
+      "In parallel I study information security: web security labs and hands-on practice with analysis tools. This site is part of that study — the Security section explains every protection it uses.",
     ],
     photoAlt: "Vitor Manzotti, wearing a light shirt, looking at the camera",
     education: {
@@ -86,8 +86,8 @@ export const en: SiteContent = {
           org: "UFABC — Federal University of ABC, Brazil",
           period: "2022 — present",
           bullets: [
-            // TODO: optional — mention relevant coursework or projects.
-            "Focus on data structures, databases and programming.",
+            "Databases, Machine Learning, Neural Networks, Distributed Systems, Algorithms and Data Structures, Linear Optimisation.",
+            "Undergraduate research: a case study analysing academic data with Python and SQL.",
           ],
         },
       ],
@@ -96,14 +96,15 @@ export const en: SiteContent = {
       heading: "Experience",
       items: [
         {
-          title: "Automation & Process Management Intern",
-          org: "Vora Energia",
+          title: "Process Management & Automation Intern",
+          org: "Vora Energia S.A.",
           period: "Aug 2025 — present",
           bullets: [
-            "Extracting and processing operational data with Python and SQL.",
-            "Automating manual routines with Power Automate and scripts.",
-            "Automated reading of PDF documents to feed reports.",
-            // TODO: add a bullet with a number. E.g. "cut monthly closing from 6h to 40min".
+            "Python pipelines (pdfplumber and regular expressions) processing around 200 natural gas invoices per month from PDF, with a modular architecture and batch tests against real invoices.",
+            "An invoice reconciliation tool between Excel and MySQL, matching in two stages: by invoice number and, when that fails, by customer, supplier and period.",
+            "VBA macros wired to MySQL over ODBC for daily volume imports and incremental invoice loading, with no duplicate records.",
+            "Pricing models for gas contracts indexed to IPCA and Brent, plus a transport charge (TAG) calculation built in Python — which surfaced and fixed a bug in the penalty maths.",
+            "Field-by-field extraction rules for an AI invoice-reading agent, and automated email flows in Power Automate.",
           ],
         },
       ],
@@ -114,17 +115,19 @@ export const en: SiteContent = {
     kicker: "02 / skills",
     heading: "Tools I work with",
     intro:
-      "An honest self-assessment, not a certificate. If something sits at 60%, it means I still check the docs — and I would rather say that here than find out in a technical interview.",
+      "The tools I actually use day to day, and what I do with each one. I would rather list fewer and be able to talk about all of them in a technical interview.",
     groups: [
       {
         id: "data",
         label: "Data",
         caption: "Extract, clean, join and explain.",
         skills: [
-          { name: "Python", note: "pandas, requests, ETL scripts" },
-          { name: "SQL (MySQL)", note: "joins, aggregations, views" },
-          { name: "Excel / VBA", note: "macros, pivot tables" },
-          { name: "PDF data extraction", note: "pdfplumber, regex" },
+          { name: "Python", note: "Pandas, NumPy, Matplotlib" },
+          { name: "SQL", note: "MySQL, PostgreSQL, HeidiSQL" },
+          { name: "PDF extraction", note: "pdfplumber, regular expressions" },
+          { name: "Web scraping", note: "BeautifulSoup" },
+          { name: "Power BI", note: "reports and indicators" },
+          { name: "Excel / VBA", note: "macros, pivot tables, ODBC" },
         ],
       },
       {
@@ -133,8 +136,11 @@ export const en: SiteContent = {
         caption: "Take the human out of the repetitive loop.",
         skills: [
           { name: "Power Automate", note: "flows, connectors, approvals" },
-          { name: "Automation with Python", note: "scheduling, integrations" },
+          { name: "GitHub Actions", note: "scheduling and continuous integration" },
           { name: "Git / GitHub", note: "branches, pull requests" },
+          { name: "Docker", note: "reproducible environments" },
+          { name: "REST APIs", note: "Java, Spring Boot" },
+          { name: "TypeScript", note: "Next.js — this site" },
         ],
       },
       {
@@ -165,30 +171,52 @@ export const en: SiteContent = {
     },
     emptyState: "Projects coming soon. In the meantime, the source of this site is on GitHub.",
     items: [
-      // TODO: EXAMPLE PROJECT 1 — replace with a real project of yours.
+      // Sem `repoUrl`: sao projetos internos da empresa e o codigo nao e
+      // publico. O card simplesmente nao mostra o botao de repositorio.
       {
-        id: "relatorio-automatizado",
-        title: "Automated operational report",
+        id: "monitor-contratos-anp",
+        title: "Natural gas contract monitor (ANP)",
         problem:
-          "The monthly report was assembled by hand, copying numbers from four different spreadsheets. It took a full day and errors were frequent.",
+          "Brazil's ANP publishes 197 natural gas contracts and changes them without notice. Finding out what moved meant opening the list and comparing by hand, every day.",
         solution:
-          "A Python script that reads every source, validates the data against consistency rules and generates the final formatted spreadsheet.",
-        stack: ["Python", "pandas", "openpyxl", "SQL"],
-        result: "From ~8 hours of manual work to ~10 minutes of execution, with no typos.",
-        repoUrl: "https://github.com/Vtinho",
-        year: "2025",
+          "A monitor that reads the publications twice a day, diffs them against the previous read and emails only what changed. Runs serverless on a GitHub Actions schedule, with retry handling on delivery.",
+        stack: ["Python", "BeautifulSoup", "GitHub Actions", "API Resend"],
+        result:
+          "197 contracts tracked automatically, twice a day, at no infrastructure cost and with no email when nothing changed.",
+        year: "2026",
       },
-      // TODO: EXAMPLE PROJECT 2 — replace with a real project of yours.
       {
-        id: "extrator-pdf",
-        title: "PDF invoice data extractor",
+        id: "analise-dados-academicos",
+        title: "Academic data analysis (UFABC)",
         problem:
-          "Hundreds of PDF invoices per month, with the data being typed manually into an internal system.",
+          "Student performance data scattered and raw, impossible to read for decision making.",
         solution:
-          "An extractor that locates fields by text pattern, normalises values and dates, and exports a CSV ready for import.",
-        stack: ["Python", "pdfplumber", "regex", "Power Automate"],
-        result: "Manual typing eliminated; human review became exception sampling.",
-        year: "2025",
+          "Extraction, cleaning and exploratory analysis, with the patterns found written up in a report. Undergraduate research work.",
+        stack: ["Python", "Pandas", "Matplotlib", "SQL"],
+        result: "A report surfacing the performance patterns the raw data was hiding.",
+        year: "2026",
+      },
+      {
+        id: "dashboards-dados-publicos",
+        title: "Public data dashboards",
+        problem:
+          "Public finance and health data is large and hard to reach for the people who need to decide with it.",
+        solution:
+          "Power BI reports that summarise the indicators and let you filter by segment.",
+        stack: ["Power BI", "Excel"],
+        result: "Readable indicators on one screen instead of raw spreadsheets.",
+        year: "2026",
+      },
+      {
+        id: "api-biblioteca",
+        title: "Library management system",
+        problem:
+          "A back-end exercise on a real domain: lending a collection, rather than the usual sample CRUD.",
+        solution:
+          "REST API in Java with Spring Boot, SQL persistence and a containerised environment.",
+        stack: ["Java", "Spring Boot", "SQL", "Docker"],
+        result: "A working API with an environment reproducible through Docker.",
+        year: "2026",
       },
     ],
   },
@@ -203,7 +231,6 @@ export const en: SiteContent = {
       heading: "What I am studying",
       intro: "Current track, tools and reading.",
       items: [
-        // TODO: the cards below are placeholders. Update `progress` and delete what you are not doing.
         {
           id: "portswigger",
           title: "PortSwigger Web Security Academy",
@@ -211,7 +238,6 @@ export const en: SiteContent = {
             "Hands-on labs on web vulnerabilities: SQL injection, XSS, CSRF, SSRF and access control.",
           tag: "lab",
           url: "https://portswigger.net/web-security",
-          progress: "TODO: 0/0 labs",
         },
         {
           id: "burp",
@@ -220,7 +246,6 @@ export const en: SiteContent = {
             "Intercepting proxy for inspecting and replaying requests. I use Repeater to test form validation.",
           tag: "tool",
           url: "https://portswigger.net/burp",
-          progress: "TODO: what you can already do with it",
         },
         {
           id: "zap",
@@ -229,7 +254,6 @@ export const en: SiteContent = {
             "Open source alternative to Burp, with an automated scanner. Good for a first pass before manual analysis.",
           tag: "tool",
           url: "https://www.zaproxy.org/",
-          progress: "TODO",
         },
         {
           id: "owasp-top-10",
@@ -238,23 +262,6 @@ export const en: SiteContent = {
             "The ten most critical classes of web application failure. It is the vocabulary of the field.",
           tag: "reading",
           url: "https://owasp.org/www-project-top-ten/",
-          progress: "TODO",
-        },
-        {
-          id: "bug-bounty",
-          title: "Bug bounty",
-          description:
-            "TODO: write this once you actually start. Platforms, scope you work in, and any accepted report.",
-          tag: "bug bounty",
-          progress: "TODO: not started yet",
-        },
-        {
-          id: "writeups",
-          title: "Writeups",
-          description:
-            "TODO: link your first writeup here. Explaining a flaw in writing is what proves you understood it.",
-          tag: "writing",
-          progress: "TODO",
         },
       ],
     },

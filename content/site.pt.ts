@@ -86,9 +86,9 @@ export const pt: SiteContent = {
     heading: "Sobre mim",
     // TODO: reescrever com a sua voz. Um parágrafo por item: o que faz hoje, como chegou aqui, para onde vai.
     bio: [
-      "Sou estudante de Ciência da Computação na UFABC e trabalho com automação e gestão de processos, transformando planilhas e rotinas manuais em fluxos de dados que rodam sozinhos.",
-      "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas — e Power Automate para eliminar o trabalho repetitivo que sobra no meio do caminho.",
-      "Em paralelo, estudo segurança da informação: laboratórios de segurança web, leitura de writeups e prática com ferramentas de análise. Este site é parte desse estudo — a seção de Segurança explica cada proteção que ele usa.",
+      "Sou estudante de Ciência da Computação na UFABC, com cerca de um ano de experiência em análise de dados e automação de processos.",
+      "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas — e Power BI quando o número precisa virar decisão. Aplico isso hoje no setor de gás natural, que é onde os processos acontecem e não a minha especialidade: extrair, conciliar e analisar dado disperso é o mesmo problema em qualquer área.",
+      "Em paralelo, estudo segurança da informação: laboratórios de segurança web e prática com ferramentas de análise. Este site é parte desse estudo — a seção de Segurança explica cada proteção que ele usa.",
     ],
     photoAlt: "Vitor Manzotti, de camisa clara, olhando para a câmera",
     education: {
@@ -99,8 +99,8 @@ export const pt: SiteContent = {
           org: "UFABC — Universidade Federal do ABC",
           period: "2022 — atual",
           bullets: [
-            // TODO: opcional — citar disciplinas ou projetos relevantes.
-            "Ênfase em estruturas de dados, banco de dados e programação.",
+            "Banco de Dados, Aprendizado de Máquina, Redes Neurais, Sistemas Distribuídos, Algoritmos e Estruturas de Dados e Otimização Linear.",
+            "Iniciação científica: estudo de caso com análise de dados acadêmicos em Python e SQL.",
           ],
         },
       ],
@@ -109,14 +109,15 @@ export const pt: SiteContent = {
       heading: "Experiência",
       items: [
         {
-          title: "Estagiário de Automação e Gestão de Processos",
-          org: "Vora Energia",
+          title: "Estagiário de Gestão e Automação de Processos",
+          org: "Vora Energia S.A.",
           period: "ago/2025 — atual",
           bullets: [
-            "Extração e tratamento de dados operacionais com Python e SQL.",
-            "Automação de rotinas manuais com Power Automate e scripts.",
-            "Leitura automatizada de documentos em PDF para alimentar relatórios.",
-            // TODO: adicionar um bullet com número. Ex.: "reduzi o fechamento mensal de 6h para 40min".
+            "Pipelines em Python (pdfplumber e expressões regulares) que processam cerca de 200 faturas de gás natural por mês em PDF, com arquitetura modular e testes em lote com faturas reais.",
+            "Ferramenta de conciliação de faturas entre Excel e MySQL, com correspondência em duas etapas: por nota fiscal e, quando ela falha, por cliente, fornecedor e período.",
+            "Macros VBA integradas ao MySQL via ODBC para importação de volumes diários e carga incremental de faturas, sem registros duplicados.",
+            "Modelagem da precificação de contratos de gás indexados ao IPCA e ao Brent, e planilha de apuração de encargos de transporte (TAG) em Python — que corrigiu uma falha no cálculo de penalidades.",
+            "Regras de extração campo a campo para um agente de IA de leitura de faturas, e fluxos de e-mail automatizados no Power Automate.",
           ],
         },
       ],
@@ -127,18 +128,19 @@ export const pt: SiteContent = {
     kicker: "02 / skills",
     heading: "Ferramentas que eu uso",
     intro:
-      "Autoavaliação honesta, não certificado. Se algo aqui está em 60%, é porque eu ainda consulto documentação — e prefiro dizer isso do que descobrir na entrevista técnica.",
+      "As ferramentas que eu uso de verdade no dia a dia, e o que faço com cada uma. Prefiro listar menos e poder falar sobre tudo em uma entrevista técnica.",
     groups: [
       {
         id: "data",
         label: "Dados",
         caption: "Extrair, limpar, cruzar e explicar.",
         skills: [
-          // TODO: ajustar os níveis. Precisam ser IDÊNTICOS em site.en.ts (o teste de paridade verifica).
-          { name: "Python", note: "pandas, requests, scripts de ETL" },
-          { name: "SQL (MySQL)", note: "joins, agregações, views" },
-          { name: "Excel / VBA", note: "macros, tabelas dinâmicas" },
-          { name: "Extração de dados de PDF", note: "pdfplumber, regex" },
+          { name: "Python", note: "Pandas, NumPy, Matplotlib" },
+          { name: "SQL", note: "MySQL, PostgreSQL, HeidiSQL" },
+          { name: "Extração de PDF", note: "pdfplumber, expressões regulares" },
+          { name: "Web scraping", note: "BeautifulSoup" },
+          { name: "Power BI", note: "relatórios e indicadores" },
+          { name: "Excel / VBA", note: "macros, tabelas dinâmicas, ODBC" },
         ],
       },
       {
@@ -147,8 +149,11 @@ export const pt: SiteContent = {
         caption: "Tirar o humano do meio do caminho repetitivo.",
         skills: [
           { name: "Power Automate", note: "fluxos, conectores, aprovações" },
-          { name: "Automação com Python", note: "agendamento, integrações" },
+          { name: "GitHub Actions", note: "agendamento e integração contínua" },
           { name: "Git / GitHub", note: "branches, pull requests" },
+          { name: "Docker", note: "ambientes reproduzíveis" },
+          { name: "APIs REST", note: "Java, Spring Boot" },
+          { name: "TypeScript", note: "Next.js — este site" },
         ],
       },
       {
@@ -179,30 +184,52 @@ export const pt: SiteContent = {
     },
     emptyState: "Projetos chegando. Enquanto isso, o código deste site está no GitHub.",
     items: [
-      // TODO: PROJETO DE EXEMPLO 1 — substituir por um projeto real seu.
+      // Sem `repoUrl`: sao projetos internos da empresa e o codigo nao e
+      // publico. O card simplesmente nao mostra o botao de repositorio.
       {
-        id: "relatorio-automatizado",
-        title: "Relatório operacional automatizado",
+        id: "monitor-contratos-anp",
+        title: "Monitor de contratos de gás natural (ANP)",
         problem:
-          "O relatório mensal era montado à mão, copiando números de quatro planilhas diferentes. Levava um dia inteiro e errava com frequência.",
+          "A ANP publica 197 contratos de gás natural e os altera sem aviso. Descobrir o que mudou exigia abrir a lista e comparar à mão, todo dia.",
         solution:
-          "Script em Python que lê as fontes, valida os dados contra regras de consistência e gera a planilha final já formatada.",
-        stack: ["Python", "pandas", "openpyxl", "SQL"],
-        result: "De ~8 horas de trabalho manual para ~10 minutos de execução, sem erro de digitação.",
-        repoUrl: "https://github.com/Vtinho",
-        year: "2025",
+          "Monitor que lê as publicações duas vezes ao dia, compara com a leitura anterior e dispara e-mail apenas quando algo muda. Roda sem servidor, agendado pelo GitHub Actions, com tratamento de falha no envio.",
+        stack: ["Python", "BeautifulSoup", "GitHub Actions", "API Resend"],
+        result:
+          "197 contratos acompanhados automaticamente, duas vezes ao dia, sem custo de infraestrutura e sem e-mail quando nada mudou.",
+        year: "2026",
       },
-      // TODO: PROJETO DE EXEMPLO 2 — substituir por um projeto real seu.
       {
-        id: "extrator-pdf",
-        title: "Extrator de dados de faturas em PDF",
+        id: "analise-dados-academicos",
+        title: "Análise de dados acadêmicos (UFABC)",
         problem:
-          "Centenas de faturas em PDF por mês, com os dados sendo digitados manualmente em um sistema interno.",
+          "Dados de desempenho discente dispersos e em formato bruto, sem leitura possível para apoiar decisão.",
         solution:
-          "Extrator que localiza os campos por padrão de texto, normaliza valores e datas, e exporta um CSV pronto para importação.",
-        stack: ["Python", "pdfplumber", "regex", "Power Automate"],
-        result: "Digitação manual eliminada; conferência humana virou amostragem por exceção.",
-        year: "2025",
+          "Extração, tratamento e análise exploratória dos dados, com os padrões encontrados organizados em relatório. Trabalho de iniciação científica.",
+        stack: ["Python", "Pandas", "Matplotlib", "SQL"],
+        result: "Relatório com os padrões de desempenho que os dados brutos escondiam.",
+        year: "2026",
+      },
+      {
+        id: "dashboards-dados-publicos",
+        title: "Dashboards de dados públicos",
+        problem:
+          "Dados públicos de finanças e saúde são volumosos e pouco acessíveis para quem precisa decidir com eles.",
+        solution:
+          "Relatórios visuais em Power BI que resumem os indicadores e permitem filtrar por recorte.",
+        stack: ["Power BI", "Excel"],
+        result: "Indicadores legíveis em uma tela, no lugar de planilhas brutas.",
+        year: "2026",
+      },
+      {
+        id: "api-biblioteca",
+        title: "Sistema de gerenciamento de biblioteca",
+        problem:
+          "Exercício de back-end com um domínio de verdade: empréstimo de acervo, em vez do CRUD de exemplo.",
+        solution:
+          "API REST em Java com Spring Boot, persistência em banco SQL e ambiente containerizado.",
+        stack: ["Java", "Spring Boot", "SQL", "Docker"],
+        result: "API funcional, com ambiente reproduzível por Docker.",
+        year: "2026",
       },
     ],
   },
@@ -217,7 +244,6 @@ export const pt: SiteContent = {
       heading: "O que estou estudando",
       intro: "Trilha atual, ferramentas e leituras.",
       items: [
-        // TODO: os cards abaixo são placeholders. Atualize o `progress` e apague o que não estiver fazendo.
         {
           id: "portswigger",
           title: "PortSwigger Web Security Academy",
@@ -225,7 +251,6 @@ export const pt: SiteContent = {
             "Laboratórios práticos de vulnerabilidades web: SQL injection, XSS, CSRF, SSRF e controle de acesso.",
           tag: "laboratório",
           url: "https://portswigger.net/web-security",
-          progress: "TODO: 0/0 labs",
         },
         {
           id: "burp",
@@ -234,7 +259,6 @@ export const pt: SiteContent = {
             "Proxy de interceptação para inspecionar e reenviar requisições. Uso no Repeater para testar validação de formulários.",
           tag: "ferramenta",
           url: "https://portswigger.net/burp",
-          progress: "TODO: o que você já consegue fazer com ele",
         },
         {
           id: "zap",
@@ -243,7 +267,6 @@ export const pt: SiteContent = {
             "Alternativa open source ao Burp, com scanner automatizado. Bom para uma primeira varredura antes da análise manual.",
           tag: "ferramenta",
           url: "https://www.zaproxy.org/",
-          progress: "TODO",
         },
         {
           id: "owasp-top-10",
@@ -252,23 +275,6 @@ export const pt: SiteContent = {
             "As dez classes de falha mais críticas em aplicações web. É o vocabulário base da área.",
           tag: "leitura",
           url: "https://owasp.org/www-project-top-ten/",
-          progress: "TODO",
-        },
-        {
-          id: "bug-bounty",
-          title: "Bug bounty",
-          description:
-            "TODO: escrever quando você começar de fato. Plataformas, escopo em que atua, e qualquer report aceito.",
-          tag: "bug bounty",
-          progress: "TODO: ainda não iniciado",
-        },
-        {
-          id: "writeups",
-          title: "Writeups",
-          description:
-            "TODO: quando você escrever o primeiro writeup, linke aqui. Explicar uma falha por escrito é o que prova que você entendeu.",
-          tag: "escrita",
-          progress: "TODO",
         },
       ],
     },
