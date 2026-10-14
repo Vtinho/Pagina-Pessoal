@@ -420,7 +420,7 @@ export const pt: SiteContent = {
         },
       ],
       disclaimer:
-        "Um aviso honesto: nota alta em scanner significa que os headers estão certos, não que a aplicação é segura. Scanner não testa lógica de negócio, autenticação nem falha de autorização. É por isso que eu também testo o formulário à mão, com Burp Suite e OWASP ZAP.",
+        "Vale o aviso: nota alta nesses scanners quer dizer que os headers estão certos, não que o site é 100% seguro. Eles não olham lógica de negócio, autenticação nem falha de autorização — isso eu testo na mão, com Burp Suite e OWASP ZAP.",
     },
   },
 

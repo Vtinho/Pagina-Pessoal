@@ -406,7 +406,7 @@ export const en: SiteContent = {
         },
       ],
       disclaimer:
-        "An honest caveat: a high scanner grade means the headers are right, not that the application is secure. Scanners do not test business logic, authentication or broken authorization. That is why I also test the form by hand, with Burp Suite and OWASP ZAP.",
+        "Worth saying: a high score on these scanners means the headers are right, not that the site is 100% secure. They do not look at business logic, authentication or broken authorization — that part I test by hand, with Burp Suite and OWASP ZAP.",
     },
   },
 
