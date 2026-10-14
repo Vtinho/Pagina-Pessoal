@@ -208,9 +208,6 @@ export interface ContactContent {
 export interface FooterContent {
   copyright: string;
   builtWith: string;
-  sourceLabel: string;
-  /** URL do repositorio deste site. TODO: criar o repo e apontar aqui. */
-  sourceUrl: string;
   securityTxtLabel: string;
 }
 

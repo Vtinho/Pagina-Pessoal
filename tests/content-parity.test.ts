@@ -135,10 +135,6 @@ describe("dados que precisam ser idênticos nos dois idiomas", () => {
     );
   });
 
-  it("aponta para o mesmo repositório nos dois rodapés", () => {
-    expect(en.footer.sourceUrl).toBe(pt.footer.sourceUrl);
-  });
-
   it("usa o mesmo e-mail de contato nos dois idiomas", () => {
     expect(en.contact.email).toBe(pt.contact.email);
   });
@@ -204,7 +200,6 @@ describe("sanidade do conteúdo", () => {
 
   it("toda URL do conteúdo é https", () => {
     const urls = [
-      pt.footer.sourceUrl,
       ...pt.projects.items.flatMap((p) => [p.repoUrl, p.demoUrl]),
       ...pt.security.studying.items.map((i) => i.url),
     ].filter((url): url is string => typeof url === "string");

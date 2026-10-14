@@ -271,7 +271,7 @@ export const en: SiteContent = {
     hardening: {
       heading: "How this site was hardened",
       intro:
-        "Every item below is implemented on this site, not theory. I point to the file so you can check it in the repository.",
+        "Every item below is implemented on this site and I point to the file where each measure lives.",
       labels: {
         what: "What it does",
         why: "Why it matters",
@@ -452,8 +452,6 @@ export const en: SiteContent = {
   footer: {
     copyright: "© {year} Vitor Manzotti",
     builtWith: "Next.js · TypeScript · Tailwind CSS",
-    sourceLabel: "Source of this site",
-    sourceUrl: "https://github.com/Vtinho/Pagina-Pessoal",
     securityTxtLabel: "security.txt",
   },
 };

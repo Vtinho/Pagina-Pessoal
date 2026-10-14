@@ -42,13 +42,6 @@ export function Footer({ locale, content }: { locale: Locale; content: SiteConte
             {contact.labels.email}
           </a>
 
-          <ExternalLink
-            href={footer.sourceUrl}
-            newTabHint={ui.opensInNewTab}
-            className="font-mono text-xs text-muted transition-colors hover:text-accent"
-          >
-            {footer.sourceLabel}
-          </ExternalLink>
 
           <a
             href="/.well-known/security.txt"

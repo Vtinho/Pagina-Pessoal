@@ -284,7 +284,7 @@ export const pt: SiteContent = {
     hardening: {
       heading: "Como este site foi protegido",
       intro:
-        "Cada item abaixo está implementado neste site, não é teoria. Indico o arquivo para você conferir no repositório.",
+        "Cada item abaixo está implementado neste site e eu indico o arquivo onde cada medida vive.",
       labels: {
         what: "O que faz",
         why: "Por que importa",
@@ -466,8 +466,6 @@ export const pt: SiteContent = {
   footer: {
     copyright: "© {year} Vitor Manzotti",
     builtWith: "Next.js · TypeScript · Tailwind CSS",
-    sourceLabel: "Código deste site",
-    sourceUrl: "https://github.com/Vtinho/Pagina-Pessoal",
     securityTxtLabel: "security.txt",
   },
 };
