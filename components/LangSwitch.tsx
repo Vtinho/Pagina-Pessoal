@@ -34,8 +34,8 @@ export function LangSwitch({
                 aria-current={isCurrent ? "true" : undefined}
                 className={
                   isCurrent
-                    ? "rounded px-1.5 py-1 font-semibold text-accent"
-                    : "rounded px-1.5 py-1 text-muted transition-colors hover:text-text"
+                    ? "inline-flex items-center rounded px-2.5 py-2 font-semibold text-accent"
+                    : "inline-flex items-center rounded px-2.5 py-2 text-muted transition-colors hover:text-text"
                 }
               >
                 <span aria-hidden="true">{locale.toUpperCase()}</span>

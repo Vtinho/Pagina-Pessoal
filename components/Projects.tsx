@@ -50,7 +50,7 @@ function ProjectCard({
   return (
     <article className="flex h-full flex-col rounded-lg border border-line bg-surface/60 p-6 transition-colors hover:border-line-strong">
       <header className="flex items-baseline justify-between gap-3">
-        <h3 className="text-lg font-semibold text-text">{project.title}</h3>
+        <h3 className="min-w-0 break-words text-lg font-semibold text-text">{project.title}</h3>
         <span className="shrink-0 font-mono text-xs text-muted">{project.year}</span>
       </header>
 

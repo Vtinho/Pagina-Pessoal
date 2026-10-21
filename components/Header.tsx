@@ -39,7 +39,7 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
           <LangSwitch current={locale} content={content} className="hidden sm:block" />
 
           <details className="group relative md:hidden">
-            <summary className="cursor-pointer list-none rounded border border-line px-2.5 py-1.5 font-mono text-xs text-muted marker:content-none [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center rounded border border-line px-3 py-2.5 font-mono text-xs text-muted marker:content-none [&::-webkit-details-marker]:hidden">
               <span className="sr-only group-open:hidden">{content.ui.openMenu}</span>
               <span className="sr-only hidden group-open:inline">
                 {content.ui.closeMenu}

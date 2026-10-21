@@ -59,7 +59,7 @@ function StudyCardView({ card, newTabHint }: { card: StudyCard; newTabHint: stri
   const body = (
     <>
       <div className="flex items-start justify-between gap-3">
-        <h4 className="font-mono text-sm font-semibold text-text">{card.title}</h4>
+        <h4 className="min-w-0 break-words font-mono text-sm font-semibold text-text">{card.title}</h4>
         <span className="shrink-0 rounded border border-line bg-accent-soft px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
           {card.tag}
         </span>
@@ -108,7 +108,7 @@ function HardeningRow({
         >
           ▸
         </span>
-        <span className="font-mono text-sm text-text">{item.title}</span>
+        <span className="min-w-0 break-words font-mono text-sm text-text">{item.title}</span>
       </summary>
 
       <div className="space-y-3 border-t border-line bg-page/40 px-5 py-4 pl-11 text-sm leading-relaxed">
@@ -131,7 +131,7 @@ function HardeningRow({
             {labels.where}
           </span>
           <p className="mt-1">
-            <code className="rounded bg-surface-2 px-1.5 py-0.5 font-mono text-xs text-text">
+            <code className="break-all rounded bg-surface-2 px-1.5 py-0.5 font-mono text-xs text-text">
               {item.where}
             </code>
           </p>
