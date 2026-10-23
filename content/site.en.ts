@@ -62,10 +62,7 @@ export const en: SiteContent = {
     actions: {
       github: "GitHub",
       linkedin: "LinkedIn",
-      cv: "Download CV",
     },
-    // TODO: put the real PDF at public/cv-en.pdf
-    cvPath: "/cv-en.pdf",
   },
 
   about: {

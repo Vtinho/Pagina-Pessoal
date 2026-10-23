@@ -99,9 +99,7 @@ export interface HeroContent {
   actions: {
     github: string;
     linkedin: string;
-    cv: string;
   };
-  cvPath: string;
 }
 
 export interface AboutContent {

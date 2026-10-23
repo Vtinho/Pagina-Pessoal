@@ -72,26 +72,6 @@ export function Hero({ content }: { content: SiteContent }) {
               {hero.actions.linkedin}
             </ExternalLink>
 
-            {/*
-              Download do CV.
-
-              `download` sugere baixar em vez de abrir no navegador. Não usa
-              target="_blank" porque não é navegação para outro site — é um
-              arquivo do próprio domínio.
-
-              TODO: coloque os PDFs em public/cv-pt.pdf e public/cv-en.pdf.
-              Enquanto os arquivos não existirem, este link devolve 404.
-            */}
-            <a
-              href={hero.cvPath}
-              download
-              className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-text transition-colors hover:border-accent hover:text-accent"
-            >
-              {hero.actions.cv}
-              <span aria-hidden="true" className="ml-1.5 text-accent">
-                ↓
-              </span>
-            </a>
           </div>
         </div>
       </div>

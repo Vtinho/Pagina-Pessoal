@@ -176,11 +176,6 @@ describe("consistência do idioma", () => {
       expect(textoEn, `${nome} parece não ter sido traduzido`).not.toBe(textoPt);
     }
   });
-
-  it("os caminhos de currículo apontam para arquivos diferentes", () => {
-    expect(pt.hero.cvPath).toBe("/cv-pt.pdf");
-    expect(en.hero.cvPath).toBe("/cv-en.pdf");
-  });
 });
 
 describe("sanidade do conteúdo", () => {
