@@ -44,7 +44,7 @@ export function About({ content }: { content: SiteContent }) {
               alt={about.photoAlt}
               width={200}
               height={200}
-              className="aspect-square w-full rounded-full border border-line object-cover grayscale transition-all duration-500 hover:grayscale-0"
+              className="aspect-square w-full rounded-full border border-line object-cover"
               sizes="(max-width: 768px) 12rem, 240px"
             />
             {/* Anel concêntrico, com folga em volta da foto. A versão anterior
