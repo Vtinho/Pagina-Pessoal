@@ -70,6 +70,27 @@ export const en: SiteContent = {
   },
 
   about: {
+    teaser: "Who I am, how I got here and what I work on today.",
+    allLabel: "read the full profile",
+    terminal: {
+      fileLabel: "about.txt",
+      identityCommand: "whoami",
+      readCommand: "cat about.txt",
+      endOfFile: "end of file",
+      facts: [
+        { label: "name", value: "Vitor Manzotti" },
+        { label: "field", value: "data analysis and process automation" },
+        { label: "education", value: "Computer Science — UFABC" },
+        { label: "studying", value: "information security" },
+      ],
+      panes: {
+        clock: "clock",
+        clockNote: "Brasília time",
+        skills: "skills/",
+        skillsCommand: "tree ~/skills",
+        links: "connections",
+      },
+    },
     kicker: "01 / about",
     heading: "About me",
     // TODO: rewrite in your own voice. One paragraph per array item.
@@ -158,6 +179,7 @@ export const en: SiteContent = {
   },
 
   projects: {
+    allLabel: "see all projects",
     kicker: "03 / projects",
     heading: "Projects",
     intro:
@@ -223,6 +245,7 @@ export const en: SiteContent = {
   },
 
   security: {
+    allLabel: "see the full section",
     kicker: "04 / security",
     heading: "Information security",
     intro:

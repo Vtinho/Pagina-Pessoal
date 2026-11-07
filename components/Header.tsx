@@ -1,16 +1,34 @@
 import type { Locale, NavSectionId, SiteContent } from "@/content/types";
+import { PAGE_SECTIONS, pathFor, type PageSection } from "@/lib/routes";
 import { LangSwitch } from "./LangSwitch";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_ORDER: NavSectionId[] = ["about", "skills", "projects", "security", "contact"];
 
-export function Header({ locale, content }: { locale: Locale; content: SiteContent }) {
-  const links = NAV_ORDER.map((id) => ({ id, label: content.nav[id] }));
+function isPageSection(id: NavSectionId): id is PageSection {
+  return (PAGE_SECTIONS as readonly string[]).includes(id);
+}
+
+export function Header({
+  locale,
+  content,
+  current,
+}: {
+  locale: Locale;
+  content: SiteContent;
+  current?: PageSection;
+}) {
+  // Href absoluto mesmo para âncora: a partir de /pt/sobre, um "#skills" solo
+  // não sairia da página.
+  const links = NAV_ORDER.map((id) => ({
+    id,
+    label: content.nav[id],
+    href: isPageSection(id) ? pathFor(id, locale) : `/${locale}#${id}`,
+    isCurrent: id === current,
+  }));
 
   return (
-    <header
-      className="sticky top-0 z-50 border-b border-line bg-page/85 backdrop-blur-md no-print"
-    >
+    <header className="sticky top-0 z-50 border-b border-line bg-page/85 backdrop-blur-md no-print">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3">
         <a
           href={`/${locale}`}
@@ -23,11 +41,16 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
 
         <nav aria-label={content.ui.navLabel} className="hidden md:block">
           <ul className="flex items-center gap-6 font-mono text-xs">
-            {links.map(({ id, label }) => (
+            {links.map(({ id, label, href, isCurrent }) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
-                  className="text-muted transition-colors hover:text-accent"
+                  href={href}
+                  aria-current={isCurrent ? "page" : undefined}
+                  className={
+                    isCurrent
+                      ? "text-accent underline underline-offset-4"
+                      : "text-muted transition-colors hover:text-accent"
+                  }
                 >
                   {label}
                 </a>
@@ -36,8 +59,13 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <LangSwitch current={locale} content={content} className="hidden sm:block" />
+        <div className="flex items-center gap-2">
+          <LangSwitch
+            current={locale}
+            content={content}
+            section={current}
+            className="hidden sm:block"
+          />
 
           <ThemeToggle labels={content.ui.theme} />
 
@@ -60,11 +88,16 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
               className="absolute right-0 top-full mt-2 w-48 rounded-md border border-line bg-surface p-2 shadow-xl shadow-(color:--c-shadow)"
             >
               <ul className="flex flex-col font-mono text-sm">
-                {links.map(({ id, label }) => (
+                {links.map(({ id, label, href, isCurrent }) => (
                   <li key={id}>
                     <a
-                      href={`#${id}`}
-                      className="block rounded px-3 py-2 text-muted transition-colors hover:bg-surface-2 hover:text-accent"
+                      href={href}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={
+                        isCurrent
+                          ? "block rounded px-3 py-2 text-accent"
+                          : "block rounded px-3 py-2 text-muted transition-colors hover:bg-surface-2 hover:text-accent"
+                      }
                     >
                       {label}
                     </a>
@@ -73,7 +106,12 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
               </ul>
 
               <div className="mt-2 border-t border-line pt-2 sm:hidden">
-                <LangSwitch current={locale} content={content} className="px-3 py-1" />
+                <LangSwitch
+                  current={locale}
+                  content={content}
+                  section={current}
+                  className="px-3 py-1"
+                />
               </div>
             </nav>
           </details>

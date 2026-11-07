@@ -31,23 +31,23 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --c-page: #faf9f6;
-  --c-surface: #ffffff;
-  --c-surface-2: #f1efe9;
+  --c-page: #e6e0d5;
+  --c-surface: #f0ece4;
+  --c-surface-2: #dcd5c8;
 
-  --c-line: #e3e0d8;
-  --c-line-strong: #b5b1a6;
+  --c-line: #cec6b6;
+  --c-line-strong: #a9a090;
 
-  --c-text: #1a1a18;
-  --c-muted: #57554e;
+  --c-text: #1f1c17;
+  --c-muted: #524e45;
 
-  --c-accent: #7f6017;
-  --c-accent-soft: #7f60171f;
+  --c-accent: #73550f;
+  --c-accent-soft: #73550f1f;
 
-  --c-danger: #b42318;
-  --c-success: #136c34;
+  --c-danger: #9e1d13;
+  --c-success: #12642f;
 
-  --c-shadow: #1a1a1824;
+  --c-shadow: #3a332426;
 }
 
 @theme inline {

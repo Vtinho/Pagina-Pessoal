@@ -103,11 +103,33 @@ export interface HeroContent {
   };
 }
 
+export interface TerminalFact {
+  label: string;
+  value: string;
+}
+
 export interface AboutContent {
   kicker: string;
   heading: string;
+  /** Chamada curta do resumo na home, que leva para a página completa. */
+  teaser: string;
+  allLabel: string;
   bio: string[];
   photoAlt: string;
+  terminal: {
+    fileLabel: string;
+    identityCommand: string;
+    readCommand: string;
+    endOfFile: string;
+    facts: TerminalFact[];
+    panes: {
+      clock: string;
+      clockNote: string;
+      skills: string;
+      skillsCommand: string;
+      links: string;
+    };
+  };
   education: {
     heading: string;
     items: TimelineItem[];
@@ -129,6 +151,7 @@ export interface ProjectsContent {
   kicker: string;
   heading: string;
   intro: string;
+  allLabel: string;
   labels: {
     problem: string;
     solution: string;
@@ -145,6 +168,7 @@ export interface SecurityContent {
   kicker: string;
   heading: string;
   intro: string;
+  allLabel: string;
   studying: {
     heading: string;
     intro: string;

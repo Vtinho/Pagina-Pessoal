@@ -1,9 +1,18 @@
 import type { Locale, SiteContent } from "@/content/types";
 import { SOCIAL } from "@/content/types";
+import type { PageSection } from "@/lib/routes";
 import { ExternalLink } from "./ExternalLink";
 import { LangSwitch } from "./LangSwitch";
 
-export function Footer({ locale, content }: { locale: Locale; content: SiteContent }) {
+export function Footer({
+  locale,
+  content,
+  section,
+}: {
+  locale: Locale;
+  content: SiteContent;
+  section?: PageSection;
+}) {
   const { footer, ui, contact } = content;
 
   const year = new Date().getFullYear();
@@ -51,14 +60,14 @@ export function Footer({ locale, content }: { locale: Locale; content: SiteConte
           </a>
 
           <a
-            href="#hero"
+            href={`/${locale}#hero`}
             className="font-mono text-xs text-muted transition-colors hover:text-accent"
           >
             {ui.backToTop} <span aria-hidden="true">↑</span>
           </a>
         </nav>
 
-        <LangSwitch current={locale} content={content} />
+        <LangSwitch current={locale} content={content} section={section} />
       </div>
     </footer>
   );

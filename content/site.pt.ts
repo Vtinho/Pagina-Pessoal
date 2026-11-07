@@ -83,6 +83,27 @@ export const pt: SiteContent = {
   },
 
   about: {
+    teaser: "Quem sou, como cheguei aqui e no que trabalho hoje.",
+    allLabel: "ler o perfil completo",
+    terminal: {
+      fileLabel: "sobre.txt",
+      identityCommand: "whoami",
+      readCommand: "cat sobre.txt",
+      endOfFile: "fim do arquivo",
+      facts: [
+        { label: "nome", value: "Vitor Manzotti" },
+        { label: "área", value: "análise de dados e automação de processos" },
+        { label: "formação", value: "Ciência da Computação — UFABC" },
+        { label: "estudando", value: "segurança da informação" },
+      ],
+      panes: {
+        clock: "relógio",
+        clockNote: "horário de Brasília",
+        skills: "skills/",
+        skillsCommand: "tree ~/skills",
+        links: "conexões",
+      },
+    },
     kicker: "01 / sobre",
     heading: "Sobre mim",
     // TODO: reescrever com a sua voz. Um parágrafo por item: o que faz hoje, como chegou aqui, para onde vai.
@@ -171,6 +192,7 @@ export const pt: SiteContent = {
   },
 
   projects: {
+    allLabel: "ver todos os projetos",
     kicker: "03 / projetos",
     heading: "Projetos",
     intro:
@@ -236,6 +258,7 @@ export const pt: SiteContent = {
   },
 
   security: {
+    allLabel: "ver a seção completa",
     kicker: "04 / segurança",
     heading: "Segurança da informação",
     intro:

@@ -1,16 +1,20 @@
 import Link from "next/link";
 import type { Locale, SiteContent } from "@/content/types";
 import { LOCALES } from "@/lib/i18n";
+import { pathFor, type PageSection } from "@/lib/routes";
 
 export function LangSwitch({
   current,
   content,
   hash = "",
+  section,
   className = "",
 }: {
   current: Locale;
   content: SiteContent;
   hash?: string;
+  /** Numa rota, o slug muda junto com o idioma: /pt/sobre -> /en/about. */
+  section?: PageSection;
   className?: string;
 }) {
   return (
@@ -28,7 +32,7 @@ export function LangSwitch({
               )}
 
               <Link
-                href={`/${locale}${hash}`}
+                href={section ? pathFor(section, locale) : `/${locale}${hash}`}
                 hrefLang={locale}
                 lang={locale}
                 aria-current={isCurrent ? "true" : undefined}

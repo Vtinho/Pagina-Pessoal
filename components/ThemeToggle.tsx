@@ -7,7 +7,7 @@ type Theme = "dark" | "light";
 
 // Mesma chave e mesmas cores lidas pelo script de boot em app/layout.tsx.
 const STORAGE_KEY = "theme";
-const THEME_COLOR: Record<Theme, string> = { dark: "#0a0a0a", light: "#faf9f6" };
+const THEME_COLOR: Record<Theme, string> = { dark: "#0a0a0a", light: "#e6e0d5" };
 
 // Nem todo lib.dom tem startViewTransition; daqui sai o tipo sem `any`.
 type ViewTransitionDocument = Document & {

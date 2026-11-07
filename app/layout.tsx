@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 // Roda antes da primeira pintura, senão a página aparece no tema errado e
 // pisca. Precisa do nonce: a CSP não tem 'unsafe-inline' em script-src.
-const THEME_BOOTSTRAP = `try{var s=localStorage.getItem("theme");var t=s==="light"||s==="dark"?s:window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="light"?"#faf9f6":"#0a0a0a"}catch(e){}`;
+const THEME_BOOTSTRAP = `try{var s=localStorage.getItem("theme");var t=s==="light"||s==="dark"?s:window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="light"?"#e6e0d5":"#0a0a0a"}catch(e){}`;
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const requestHeaders = await headers();

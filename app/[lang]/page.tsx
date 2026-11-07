@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import { getContent } from "@/content";
 import { isLocale, siteUrl } from "@/lib/i18n";
-import { About } from "@/components/About";
+import { pathFor } from "@/lib/routes";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
-import { SecuritySection } from "@/components/SecuritySection";
+import { SectionTeaser } from "@/components/SectionTeaser";
+import { SkipLink } from "@/components/SkipLink";
 import { Skills } from "@/components/Skills";
 
 type Params = Promise<{ lang: string }>;
@@ -17,25 +17,55 @@ export default async function HomePage({ params }: { params: Params }) {
   if (!isLocale(lang)) notFound();
 
   const content = getContent(lang);
+  const { about, projects, security } = content;
 
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-semibold focus:text-page"
-      >
-        {content.ui.skipToContent}
-      </a>
-
+      <SkipLink label={content.ui.skipToContent} />
 
       <Header locale={lang} content={content} />
 
       <main id="main" tabIndex={-1} className="outline-none">
         <Hero content={content} />
-        <About content={content} />
+
+        <SectionTeaser
+          id="about"
+          kicker={about.kicker}
+          heading={about.heading}
+          intro={about.teaser}
+          items={[...about.experience.items, ...about.education.items].map((item) => ({
+            title: item.title,
+            meta: item.period,
+          }))}
+          href={pathFor("about", lang)}
+          linkLabel={about.allLabel}
+        />
+
         <Skills content={content} />
-        <Projects content={content} />
-        <SecuritySection content={content} />
+
+        <SectionTeaser
+          id="projects"
+          kicker={projects.kicker}
+          heading={projects.heading}
+          intro={projects.intro}
+          items={projects.items.map((project) => ({
+            title: project.title,
+            meta: project.year,
+          }))}
+          href={pathFor("projects", lang)}
+          linkLabel={projects.allLabel}
+        />
+
+        <SectionTeaser
+          id="security"
+          kicker={security.kicker}
+          heading={security.heading}
+          intro={security.intro}
+          items={security.hardening.items.map((item) => ({ title: item.title }))}
+          href={pathFor("security", lang)}
+          linkLabel={security.allLabel}
+        />
+
         <Contact content={content} />
       </main>
 
