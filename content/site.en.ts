@@ -96,7 +96,7 @@ export const en: SiteContent = {
     // TODO: rewrite in your own voice. One paragraph per array item.
     bio: [
       "I am a Computer Science student at UFABC (Brazil), with around a year of experience in data analysis and process automation.",
-      "Day to day I use Python and SQL to extract, clean and join data scattered across PDFs, emails and spreadsheets — and Power BI when a number needs to become a decision. I currently do this in the natural gas sector, which is where the processes happen rather than my specialism: extracting, reconciling and analysing scattered data is the same problem in any industry.",
+      "Day to day I use Python and SQL to extract, clean and join data scattered across PDFs, emails and spreadsheets — and Power BI when a number needs to become a decision. I currently do this in the natural gas sector, which is where the processes happen. The specialism is a different thing: extracting, reconciling and analysing scattered data is the same problem in any industry.",
       "In parallel I study information security: web security labs and hands-on practice with analysis tools. This site is part of that study — the Security section explains every protection it uses.",
     ],
     photoAlt: "Vitor Manzotti, wearing a light shirt, looking at the camera",
@@ -137,7 +137,7 @@ export const en: SiteContent = {
     kicker: "02 / skills",
     heading: "Tools I work with",
     intro:
-      "The tools I actually use day to day, and what I do with each one. I would rather list fewer and be able to talk about all of them in a technical interview.",
+      "The tools I use day to day, and what I do with each one. I would rather list fewer and be able to discuss all of them in a technical interview.",
     groups: [
       {
         id: "data",
@@ -155,7 +155,7 @@ export const en: SiteContent = {
       {
         id: "automation",
         label: "Automation",
-        caption: "Take the human out of the repetitive loop.",
+        caption: "Reduce manual work in repetitive tasks.",
         skills: [
           { name: "Power Automate", note: "flows, connectors, approvals" },
           { name: "GitHub Actions", note: "scheduling and continuous integration" },
@@ -168,7 +168,7 @@ export const en: SiteContent = {
       {
         id: "security",
         label: "Security",
-        caption: "What I study — see the Security section below.",
+        caption: "What I study. The Security section details what I have applied.",
         skills: [
           { name: "Web security (OWASP Top 10)", note: "XSS, injection, CSRF" },
           { name: "Burp Suite", note: "proxy, repeater, intruder" },
@@ -192,7 +192,7 @@ export const en: SiteContent = {
       repo: "Repository",
       demo: "Demo",
     },
-    emptyState: "Projects coming soon. In the meantime, the source of this site is on GitHub.",
+    emptyState: "Projects in preparation. In the meantime, the source of this site is on GitHub.",
     items: [
       // Sem `repoUrl`: sao projetos internos da empresa e o codigo nao e
       // publico. O card simplesmente nao mostra o botao de repositorio.
@@ -202,7 +202,7 @@ export const en: SiteContent = {
         problem:
           "Brazil's ANP publishes 197 natural gas contracts and changes them without notice. Finding out what moved meant opening the list and comparing by hand, every day.",
         solution:
-          "A monitor that reads the publications twice a day, diffs them against the previous read and emails only what changed. Runs serverless on a GitHub Actions schedule, with retry handling on delivery.",
+          "A monitor that reads the publications twice a day, compares them against the previous read and emails only what changed. Runs without dedicated infrastructure, on a GitHub Actions schedule, with retry handling on delivery.",
         stack: ["Python", "BeautifulSoup", "GitHub Actions", "API Resend"],
         result:
           "197 contracts tracked automatically, twice a day, at no infrastructure cost and with no email when nothing changed.",
@@ -234,7 +234,7 @@ export const en: SiteContent = {
         id: "api-biblioteca",
         title: "Library management system",
         problem:
-          "A back-end exercise on a real domain: lending a collection, rather than the usual sample CRUD.",
+          "Practising back-end work on a real domain — lending a collection — rather than the usual sample CRUD.",
         solution:
           "REST API in Java with Spring Boot, SQL persistence and a containerised environment.",
         stack: ["Java", "Spring Boot", "SQL", "Docker"],
@@ -249,7 +249,7 @@ export const en: SiteContent = {
     kicker: "04 / security",
     heading: "Information security",
     intro:
-      "This is what I study outside of work. Below: what I am currently learning and then exactly how this site was hardened — because talking about security without applying it is easy.",
+      "What I study outside of work. First what I am currently learning, then how this site was hardened — because talking about security without applying it is easy.",
 
     studying: {
       heading: "What I am studying",
@@ -262,14 +262,14 @@ export const en: SiteContent = {
             "Hands-on labs on web vulnerabilities: SQL injection, XSS, CSRF, SSRF and access control.",
           tag: "lab",
           url: "https://portswigger.net/web-security",
-          // TODO: mesmo número de site.pt.ts.
+          // TODO: keep this in sync with site.pt.ts.
           progress: "39 labs completed — 26 apprentice, 13 practitioner",
         },
         {
           id: "burp",
           title: "Burp Suite",
           description:
-            "Intercepting proxy for inspecting and replaying requests. I use Repeater to test form validation.",
+            "Intercepting proxy for inspecting and replaying requests. I use Repeater to test form validation on this site.",
           tag: "tool",
           url: "https://portswigger.net/burp",
         },
@@ -306,7 +306,7 @@ export const en: SiteContent = {
           id: "csp",
           title: "Content-Security-Policy with a nonce",
           what: "A list of what the browser is allowed to load and execute on this page. Every request generates a single-use random number (a nonce), and only scripts carrying that number are allowed to run.",
-          why: "It is the last line of defence against XSS: even if a stray script were injected into the HTML, it would not carry that request's nonce and the browser would refuse to execute it. The policy also forbids 'unsafe-eval', so code cannot be created from a string.",
+          why: "It is the last line of defence against XSS: even if a malicious script were injected into the HTML, it would not carry that request's nonce and the browser would refuse to execute it. The policy also forbids 'unsafe-eval', so code cannot be created from a string.",
           where: "lib/security.ts + proxy.ts",
         },
         {
@@ -376,7 +376,7 @@ export const en: SiteContent = {
           id: "rate-limit",
           title: "Per-IP rate limiting",
           what: "Caps how many messages one IP can send per time window; beyond that it answers 429.",
-          why: "Stops someone from using the form to flood my inbox or burn through my email sending quota.",
+          why: "Stops someone from using the form to flood the inbox or exhaust the email sending quota.",
           where: "lib/rate-limit.ts",
         },
         {
@@ -404,7 +404,7 @@ export const en: SiteContent = {
           id: "deps",
           title: "Minimal, monitored dependencies",
           what: "Few libraries, no heavy UI framework. Dependabot opens a PR when a fix ships, and 'npm run audit' fails on a high severity finding.",
-          why: "Most of the code in a JavaScript project comes from dependencies. Fewer packages means less code you never read running on your server.",
+          why: "Most of the code in a JavaScript project comes from dependencies. Fewer packages mean less unaudited code running on the server.",
           where: ".github/dependabot.yml",
         },
         {
@@ -430,7 +430,7 @@ export const en: SiteContent = {
         },
       ],
       disclaimer:
-        "Worth saying: a high score on these scanners means the headers are right, not that the site is 100% secure. They do not look at business logic, authentication or broken authorization — that part I test by hand, with Burp Suite and OWASP ZAP.",
+        "Worth saying: a high score on these scanners means the headers are right, not that the site is 100% secure. They do not look at business logic, authentication or broken authorization — I test that part manually, with Burp Suite and OWASP ZAP.",
     },
   },
 
@@ -448,7 +448,7 @@ export const en: SiteContent = {
     form: {
       legend: "Send a message",
       nameLabel: "Name",
-      namePlaceholder: "What should I call you",
+      namePlaceholder: "What should I call you?",
       emailLabel: "Email",
       emailPlaceholder: "you@company.com",
       messageLabel: "Message",

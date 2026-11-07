@@ -109,7 +109,7 @@ export const pt: SiteContent = {
     // TODO: reescrever com a sua voz. Um parágrafo por item: o que faz hoje, como chegou aqui, para onde vai.
     bio: [
       "Sou estudante de Ciência da Computação na UFABC, com cerca de um ano de experiência em análise de dados e automação de processos.",
-      "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas — e Power BI quando o número precisa virar decisão. Aplico isso hoje no setor de gás natural, que é onde os processos acontecem e não a minha especialidade: extrair, conciliar e analisar dado disperso é o mesmo problema em qualquer área.",
+      "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas — e Power BI quando o número precisa virar decisão. Aplico isso hoje no setor de gás natural, que é onde os processos acontecem. A especialidade é outra: extrair, conciliar e analisar dados dispersos é o mesmo problema em qualquer área.",
       "Em paralelo, estudo segurança da informação: laboratórios de segurança web e prática com ferramentas de análise. Este site é parte desse estudo — a seção de Segurança explica cada proteção que ele usa.",
     ],
     photoAlt: "Vitor Manzotti, de camisa clara, olhando para a câmera",
@@ -150,7 +150,7 @@ export const pt: SiteContent = {
     kicker: "02 / skills",
     heading: "Ferramentas que eu uso",
     intro:
-      "As ferramentas que eu uso de verdade no dia a dia, e o que faço com cada uma. Prefiro listar menos e poder falar sobre tudo em uma entrevista técnica.",
+      "Ferramentas que uso no dia a dia, e o que faço com cada uma. Prefiro listar menos e conseguir falar sobre todas em uma entrevista técnica.",
     groups: [
       {
         id: "data",
@@ -168,7 +168,7 @@ export const pt: SiteContent = {
       {
         id: "automation",
         label: "Automação",
-        caption: "Tirar o humano do meio do caminho repetitivo.",
+        caption: "Reduzir a intervenção manual em tarefas repetitivas.",
         skills: [
           { name: "Power Automate", note: "fluxos, conectores, aprovações" },
           { name: "GitHub Actions", note: "agendamento e integração contínua" },
@@ -181,7 +181,7 @@ export const pt: SiteContent = {
       {
         id: "security",
         label: "Segurança",
-        caption: "Área que estudo — ver a seção de Segurança abaixo.",
+        caption: "Área que estudo. A seção de Segurança detalha o que já apliquei.",
         skills: [
           { name: "Segurança web (OWASP Top 10)", note: "XSS, injeção, CSRF" },
           { name: "Burp Suite", note: "proxy, repeater, intruder" },
@@ -205,7 +205,7 @@ export const pt: SiteContent = {
       repo: "Repositório",
       demo: "Demo",
     },
-    emptyState: "Projetos chegando. Enquanto isso, o código deste site está no GitHub.",
+    emptyState: "Projetos em preparação. Enquanto isso, o código deste site está no GitHub.",
     items: [
       // Sem `repoUrl`: sao projetos internos da empresa e o codigo nao e
       // publico. O card simplesmente nao mostra o botao de repositorio.
@@ -215,7 +215,7 @@ export const pt: SiteContent = {
         problem:
           "A ANP publica 197 contratos de gás natural e os altera sem aviso. Descobrir o que mudou exigia abrir a lista e comparar à mão, todo dia.",
         solution:
-          "Monitor que lê as publicações duas vezes ao dia, compara com a leitura anterior e dispara e-mail apenas quando algo muda. Roda sem servidor, agendado pelo GitHub Actions, com tratamento de falha no envio.",
+          "Monitor que lê as publicações duas vezes ao dia, compara com a leitura anterior e envia e-mail apenas quando algo muda. Executa sem infraestrutura dedicada, agendado pelo GitHub Actions, com tratamento de falha no envio.",
         stack: ["Python", "BeautifulSoup", "GitHub Actions", "API Resend"],
         result:
           "197 contratos acompanhados automaticamente, duas vezes ao dia, sem custo de infraestrutura e sem e-mail quando nada mudou.",
@@ -247,7 +247,7 @@ export const pt: SiteContent = {
         id: "api-biblioteca",
         title: "Sistema de gerenciamento de biblioteca",
         problem:
-          "Exercício de back-end com um domínio de verdade: empréstimo de acervo, em vez do CRUD de exemplo.",
+          "Praticar back-end sobre um domínio real — empréstimo de acervo — em vez de um CRUD de exemplo.",
         solution:
           "API REST em Java com Spring Boot, persistência em banco SQL e ambiente containerizado.",
         stack: ["Java", "Spring Boot", "SQL", "Docker"],
@@ -262,7 +262,7 @@ export const pt: SiteContent = {
     kicker: "04 / segurança",
     heading: "Segurança da informação",
     intro:
-      "É a área que eu estudo por fora do trabalho. Aqui mostro o que estou estudando e, depois, exatamente como este site foi protegido — porque falar de segurança sem aplicar é fácil.",
+      "Área que estudo fora do trabalho. Apresento o que estou estudando e, em seguida, como este site foi protegido — porque falar de segurança sem aplicar é fácil.",
 
     studying: {
       heading: "O que estou estudando",
@@ -282,7 +282,7 @@ export const pt: SiteContent = {
           id: "burp",
           title: "Burp Suite",
           description:
-            "Proxy de interceptação para inspecionar e reenviar requisições. Uso no Repeater para testar validação de formulários.",
+            "Proxy de interceptação para inspecionar e reenviar requisições. Uso o Repeater para testar a validação de formulários.",
           tag: "ferramenta",
           url: "https://portswigger.net/burp",
         },
@@ -319,7 +319,7 @@ export const pt: SiteContent = {
           id: "csp",
           title: "Content-Security-Policy com nonce",
           what: "Uma lista do que o navegador pode carregar e executar nesta página. Cada requisição gera um número aleatório de uso único (nonce), e só scripts marcados com aquele número rodam.",
-          why: "É a última linha de defesa contra XSS: mesmo que algum script estranho fosse injetado no HTML, ele não teria o nonce daquela requisição e o navegador se recusaria a executá-lo. A política também não permite 'unsafe-eval', então código não pode ser criado a partir de texto.",
+          why: "É a última linha de defesa contra XSS: mesmo que um script malicioso fosse injetado no HTML, ele não teria o nonce daquela requisição e o navegador se recusaria a executá-lo. A política também não permite 'unsafe-eval', então código não pode ser criado a partir de texto.",
           where: "lib/security.ts + proxy.ts",
         },
         {
@@ -389,21 +389,21 @@ export const pt: SiteContent = {
           id: "rate-limit",
           title: "Rate limiting por IP",
           what: "Limita quantas mensagens o mesmo IP pode enviar por janela de tempo; acima disso, responde 429.",
-          why: "Impede que alguém use o formulário para inundar sua caixa de entrada ou torrar sua cota de envio de e-mail.",
+          why: "Impede que alguém use o formulário para inundar a caixa de entrada ou esgotar a cota de envio de e-mail.",
           where: "lib/rate-limit.ts",
         },
         {
           id: "generic-errors",
           title: "Mensagens de erro genéricas",
           what: "A API responde com um código curto ('VALIDATION', 'RATE_LIMITED'). Nunca devolve stack trace, nome de arquivo nem versão de biblioteca.",
-          why: "Mensagem de erro detalhada é reconhecimento gratuito para quem está te atacando: revela o stack, o caminho dos arquivos e às vezes a versão vulnerável.",
+          why: "Mensagem de erro detalhada é reconhecimento gratuito para quem ataca: revela o stack, o caminho dos arquivos e às vezes a versão vulnerável.",
           where: "app/api/contact/route.ts",
         },
         {
           id: "secrets",
           title: "Segredos só em variáveis de ambiente",
           what: "Nenhuma chave no código. Tudo que é segredo vive em variável de ambiente, e todo arquivo .env está no .gitignore.",
-          why: "Chave comitada no Git fica no histórico para sempre, mesmo depois de apagada — e bots varrem o GitHub procurando exatamente isso.",
+          why: "Chave versionada no Git fica no histórico para sempre, mesmo depois de apagada — e bots varrem o GitHub procurando exatamente isso.",
           where: ".gitignore",
         },
         {
@@ -417,7 +417,7 @@ export const pt: SiteContent = {
           id: "deps",
           title: "Dependências mínimas e monitoradas",
           what: "Poucas bibliotecas, sem framework de UI pesado. O Dependabot abre PR quando sai correção, e 'npm run audit' falha em vulnerabilidade alta.",
-          why: "A maior parte do código de um projeto JavaScript vem de dependências. Menos pacote é menos código que você não leu rodando no seu servidor.",
+          why: "A maior parte do código de um projeto JavaScript vem de dependências. Menos pacotes significam menos código não auditado em execução no servidor.",
           where: ".github/dependabot.yml",
         },
         {
@@ -444,7 +444,7 @@ export const pt: SiteContent = {
         },
       ],
       disclaimer:
-        "Vale o aviso: nota alta nesses scanners quer dizer que os headers estão certos, não que o site é 100% seguro. Eles não olham lógica de negócio, autenticação nem falha de autorização — isso eu testo na mão, com Burp Suite e OWASP ZAP.",
+        "Vale o aviso: nota alta nesses scanners quer dizer que os headers estão certos, não que o site é 100% seguro. Eles não olham lógica de negócio, autenticação nem falha de autorização — isso eu testo manualmente, com Burp Suite e OWASP ZAP.",
     },
   },
 
@@ -452,7 +452,7 @@ export const pt: SiteContent = {
     kicker: "05 / contato",
     heading: "Vamos conversar",
     intro:
-      "Aberto a oportunidades em análise de dados e automação. Manda mensagem pelo formulário ou chama direto no LinkedIn.",
+      "Aberto a oportunidades em análise de dados e automação. Envie uma mensagem pelo formulário ou entre em contato pelo LinkedIn.",
     email: "vitormanzotti@gmail.com",
     labels: {
       email: "E-mail",
@@ -462,7 +462,7 @@ export const pt: SiteContent = {
     form: {
       legend: "Enviar mensagem",
       nameLabel: "Nome",
-      namePlaceholder: "Como devo te chamar",
+      namePlaceholder: "Como devo chamar você?",
       emailLabel: "E-mail",
       emailPlaceholder: "voce@empresa.com",
       messageLabel: "Mensagem",
@@ -482,7 +482,7 @@ export const pt: SiteContent = {
       invalid: "Confira os campos destacados e tente de novo.",
       rateLimited: "Muitas mensagens em pouco tempo. Aguarde alguns minutos e tente novamente.",
       rejected: "Não foi possível enviar esta requisição. Se você usa alguma extensão de privacidade, tente desativá-la nesta página.",
-      serverError: "Algo falhou do meu lado. Tente novamente em instantes ou me chame no LinkedIn.",
+      serverError: "Algo falhou do meu lado. Tente novamente em instantes ou entre em contato pelo LinkedIn.",
       network: "Sem conexão com o servidor. Verifique sua internet e tente de novo.",
     },
   },
