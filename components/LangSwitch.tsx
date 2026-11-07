@@ -6,13 +6,11 @@ import { pathFor, type PageSection } from "@/lib/routes";
 export function LangSwitch({
   current,
   content,
-  hash = "",
   section,
   className = "",
 }: {
   current: Locale;
   content: SiteContent;
-  hash?: string;
   /** Numa rota, o slug muda junto com o idioma: /pt/sobre -> /en/about. */
   section?: PageSection;
   className?: string;
@@ -32,7 +30,7 @@ export function LangSwitch({
               )}
 
               <Link
-                href={section ? pathFor(section, locale) : `/${locale}${hash}`}
+                href={section ? pathFor(section, locale) : `/${locale}`}
                 hrefLang={locale}
                 lang={locale}
                 aria-current={isCurrent ? "true" : undefined}

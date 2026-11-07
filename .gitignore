@@ -12,7 +12,7 @@ next-env.d.ts
 # testes / cobertura
 /coverage
 
-# SEGREDOS — nunca comitar. Use .env.example como modelo.
+# SEGREDOS — nunca comitar. Os nomes das variáveis estão no GUIA.local.md.
 .env
 .env.local
 .env.development.local
@@ -41,10 +41,9 @@ yarn-error.log*
 # Guia detalhado do projeto - uso pessoal, nao vai para o repositorio publico.
 GUIA.local.md
 
-# Gerados automaticamente pelo 
-ext dev.
+# Gerados automaticamente pela ferramenta de desenvolvimento.
 AGENTS.md
 CLAUDE.md
 
-# Modelo de variaveis de ambiente - uso local, fora do repositorio publico.
+# Modelo de variaveis de ambiente, caso alguma ferramenta gere um.
 .env.example
