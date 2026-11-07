@@ -1,5 +1,6 @@
 import type { Locale, NavSectionId, SiteContent } from "@/content/types";
 import { LangSwitch } from "./LangSwitch";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_ORDER: NavSectionId[] = ["about", "skills", "projects", "security", "contact"];
 
@@ -38,6 +39,8 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
         <div className="flex items-center gap-3">
           <LangSwitch current={locale} content={content} className="hidden sm:block" />
 
+          <ThemeToggle labels={content.ui.theme} />
+
           <details className="group relative md:hidden">
             <summary className="flex cursor-pointer list-none items-center rounded border border-line px-3 py-2.5 font-mono text-xs text-muted marker:content-none [&::-webkit-details-marker]:hidden">
               <span className="sr-only group-open:hidden">{content.ui.openMenu}</span>
@@ -54,7 +57,7 @@ export function Header({ locale, content }: { locale: Locale; content: SiteConte
 
             <nav
               aria-label={content.ui.navLabel}
-              className="absolute right-0 top-full mt-2 w-48 rounded-md border border-line bg-surface p-2 shadow-xl shadow-black/50"
+              className="absolute right-0 top-full mt-2 w-48 rounded-md border border-line bg-surface p-2 shadow-xl shadow-(color:--c-shadow)"
             >
               <ul className="flex flex-col font-mono text-sm">
                 {links.map(({ id, label }) => (

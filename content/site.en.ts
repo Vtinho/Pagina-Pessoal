@@ -32,6 +32,10 @@ export const en: SiteContent = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     backToTop: "Back to top",
+    theme: {
+      light: { label: "light", action: "Switch to light theme" },
+      dark: { label: "dark", action: "Switch to dark theme" },
+    },
   },
 
   nav: {

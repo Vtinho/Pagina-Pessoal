@@ -14,7 +14,7 @@ export function Hero({ content }: { content: SiteContent }) {
       <div className="grid-backdrop pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
 
       <div className="mx-auto w-full max-w-5xl">
-        <div className="max-w-xl overflow-hidden rounded-lg border border-line bg-surface/80 shadow-2xl shadow-black/40 backdrop-blur-sm">
+        <div className="max-w-xl overflow-hidden rounded-lg border border-line bg-surface/80 shadow-2xl shadow-(color:--c-shadow) backdrop-blur-sm">
           <div className="flex items-center gap-2 border-b border-line bg-surface-2/60 px-4 py-2.5">
             <span aria-hidden="true" className="flex gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-line-strong" />

@@ -45,6 +45,10 @@ export const pt: SiteContent = {
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     backToTop: "Voltar ao topo",
+    theme: {
+      light: { label: "claro", action: "Ativar tema claro" },
+      dark: { label: "escuro", action: "Ativar tema escuro" },
+    },
   },
 
   nav: {

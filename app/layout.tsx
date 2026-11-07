@@ -17,19 +17,30 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
+// Roda antes da primeira pintura, senão a página aparece no tema errado e
+// pisca. Precisa do nonce: a CSP não tem 'unsafe-inline' em script-src.
+const THEME_BOOTSTRAP = `try{var s=localStorage.getItem("theme");var t=s==="light"||s==="dark"?s:window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="light"?"#faf9f6":"#0a0a0a"}catch(e){}`;
+
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const requestHeaders = await headers();
   const raw = requestHeaders.get("x-locale") ?? DEFAULT_LOCALE;
   const locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
   const { meta } = getContent(locale);
 
+  const nonce = requestHeaders.get("x-nonce") ?? undefined;
+
   return (
     <html
       lang={meta.htmlLang}
       className={`${inter.variable} ${jetbrainsMono.variable}`}
       translate="no"
+      // O script acima mexe no data-theme antes da hidratação.
+      suppressHydrationWarning
     >
-      <body className="bg-page text-text font-sans antialiased">{children}</body>
+      <body className="bg-page text-text font-sans antialiased">
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }} />
+        {children}
+      </body>
     </html>
   );
 }

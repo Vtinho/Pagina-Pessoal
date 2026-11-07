@@ -86,6 +86,7 @@ export interface UiContent {
   openMenu: string;
   closeMenu: string;
   backToTop: string;
+  theme: Record<"light" | "dark", { label: string; action: string }>;
 }
 
 export interface HeroContent {
