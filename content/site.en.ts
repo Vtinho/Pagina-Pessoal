@@ -62,7 +62,7 @@ export const en: SiteContent = {
     role: "Data Analyst · Process Automation",
     // TODO: rewrite in your own words once you have a concrete number to cite.
     tagline:
-      "I turn manual processes into reliable data and automated routines — and I care about the security of what I build.",
+      "I automate repetitive work and leave the data ready for the decision. Security from the start, not bolted on later.",
     actions: {
       github: "GitHub",
       linkedin: "LinkedIn",
@@ -96,8 +96,8 @@ export const en: SiteContent = {
     // TODO: rewrite in your own voice. One paragraph per array item.
     bio: [
       "I am a Computer Science student at UFABC (Brazil), with around a year of experience in data analysis and process automation.",
-      "Day to day I use Python and SQL to extract, clean and join data scattered across PDFs, emails and spreadsheets — and Power BI when a number needs to become a decision. I currently do this in the natural gas sector, which is where the processes happen. The specialism is a different thing: extracting, reconciling and analysing scattered data is the same problem in any industry.",
-      "In parallel I study information security: web security labs and hands-on practice with analysis tools. This site is part of that study — the Security section explains every protection it uses.",
+      "Day to day I use Python and SQL to extract, clean and join data scattered across PDFs, emails and spreadsheets, and Power BI when a number needs to become a decision. I currently do this in the natural gas sector, which is where the processes happen. The specialism is a different thing: extracting, reconciling and analysing scattered data is the same problem in any industry.",
+      "In parallel I study information security: web security labs and hands-on practice with analysis tools. This site is part of that study: the Security page explains every protection it uses.",
     ],
     photoAlt: "Vitor Manzotti, wearing a light shirt, looking at the camera",
     education: {
@@ -125,7 +125,7 @@ export const en: SiteContent = {
             "Python pipelines (pdfplumber and regular expressions) processing around 200 natural gas invoices per month from PDF, with a modular architecture and batch tests against real invoices.",
             "An invoice reconciliation tool between Excel and MySQL, matching in two stages: by invoice number and, when that fails, by customer, supplier and period.",
             "VBA macros wired to MySQL over ODBC for daily volume imports and incremental invoice loading, with no duplicate records.",
-            "Pricing models for gas contracts indexed to IPCA and Brent, plus a transport charge (TAG) calculation built in Python — which surfaced and fixed a bug in the penalty maths.",
+            "Pricing models for gas contracts indexed to IPCA and Brent, plus a transport charge (TAG) calculation built in Python, which surfaced and fixed a bug in the penalty maths.",
             "Field-by-field extraction rules for an AI invoice-reading agent, and automated email flows in Power Automate.",
           ],
         },
@@ -234,7 +234,7 @@ export const en: SiteContent = {
         id: "api-biblioteca",
         title: "Library management system",
         problem:
-          "Practising back-end work on a real domain — lending a collection — rather than the usual sample CRUD.",
+          "Practising back-end work on a real domain (lending a collection) rather than the usual sample CRUD.",
         solution:
           "REST API in Java with Spring Boot, SQL persistence and a containerised environment.",
         stack: ["Java", "Spring Boot", "SQL", "Docker"],
@@ -249,7 +249,7 @@ export const en: SiteContent = {
     kicker: "04 / security",
     heading: "Information security",
     intro:
-      "What I study outside of work. First what I am currently learning, then how this site was hardened — because talking about security without applying it is easy.",
+      "It is what I study outside of work. Here are the topics I am looking at right now and the protections this site actually uses. I would rather show than claim.",
 
     studying: {
       heading: "What I am studying",
@@ -313,7 +313,7 @@ export const en: SiteContent = {
           id: "frame-ancestors",
           title: "frame-ancestors 'none'",
           what: "Forbids any other site from placing this page inside an <iframe>.",
-          why: "Blocks clickjacking — the technique of overlaying an invisible page on top of yours so the victim clicks something they cannot see.",
+          why: "Blocks clickjacking, the technique of overlaying an invisible page on top of yours so the victim clicks something they cannot see.",
           where: "lib/security.ts",
         },
         {
@@ -333,7 +333,7 @@ export const en: SiteContent = {
         {
           id: "referrer",
           title: "Referrer-Policy: strict-origin-when-cross-origin",
-          what: "When you click an outbound link, only the origin is sent — never the full path or query string.",
+          what: "When you click an outbound link, only the origin is sent, never the full path or query string.",
           why: "Prevents leaking into third-party logs the information that sometimes lives in a URL (tokens, identifiers, search terms).",
           where: "lib/security.ts",
         },
@@ -355,7 +355,7 @@ export const en: SiteContent = {
           id: "validation",
           title: "Server-side validation with Zod",
           what: "The contact form is validated again on the server: type, minimum and maximum length of each field, and email format.",
-          why: "Browser validation is a usability convenience, not security — anyone can strip it in DevTools or send the request straight from Burp. The check that counts is the server's.",
+          why: "Browser validation is a usability convenience, not security: anyone can strip it in DevTools or send the request straight from Burp. The check that counts is the server's.",
           where: "lib/contact-schema.ts",
         },
         {
@@ -369,7 +369,7 @@ export const en: SiteContent = {
           id: "honeypot",
           title: "Anti-bot honeypot",
           what: "There is an extra field in the form, invisible to people. If it arrives filled in, the sender was a robot.",
-          why: "Filters automated spam without a CAPTCHA — no puzzle for the visitor to solve and no third-party script embedded in the page.",
+          why: "Filters automated spam without a CAPTCHA, with no puzzle for the visitor to solve and no third-party script embedded in the page.",
           where: "components/ContactForm.tsx",
         },
         {
@@ -390,7 +390,7 @@ export const en: SiteContent = {
           id: "secrets",
           title: "Secrets in environment variables only",
           what: "No key in the code. Every secret lives in an environment variable, and every .env file is gitignored.",
-          why: "A key committed to Git stays in history forever, even after you delete it — and bots scan GitHub for exactly that.",
+          why: "A key committed to Git stays in history forever, even after you delete it. And bots scan GitHub for exactly that.",
           where: ".gitignore",
         },
         {
@@ -430,7 +430,7 @@ export const en: SiteContent = {
         },
       ],
       disclaimer:
-        "Worth saying: a high score on these scanners means the headers are right, not that the site is 100% secure. They do not look at business logic, authentication or broken authorization — I test that part manually, with Burp Suite and OWASP ZAP.",
+        "Worth saying: a high score on these scanners means the headers are right, not that the site is 100% secure. They do not look at business logic, authentication or broken authorization. I test that part manually, with Burp Suite and OWASP ZAP.",
     },
   },
 
@@ -464,7 +464,7 @@ export const en: SiteContent = {
       },
     },
     feedback: {
-      success: "Message received. I will get back to you soon — thank you!",
+      success: "Message received. I will get back to you soon. Thank you!",
       invalid: "Please check the highlighted fields and try again.",
       rateLimited: "Too many messages in a short time. Please wait a few minutes and try again.",
       rejected: "This request could not be sent. If you use a privacy extension, try disabling it on this page.",

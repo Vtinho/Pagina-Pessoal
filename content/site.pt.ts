@@ -75,7 +75,7 @@ export const pt: SiteContent = {
     role: "Data Analyst · Automação de Processos",
     // TODO: é a frase que o recrutador lê em 3 segundos. Reescreva quando tiver um número concreto para citar.
     tagline:
-      "Transformo processos manuais em dados confiáveis e rotinas automatizadas — e me preocupo com a segurança do que construo.",
+      "Automatizo o trabalho repetitivo e deixo o dado pronto pra decisão. Com segurança desde o começo, não depois.",
     actions: {
       github: "GitHub",
       linkedin: "LinkedIn",
@@ -109,8 +109,8 @@ export const pt: SiteContent = {
     // TODO: reescrever com a sua voz. Um parágrafo por item: o que faz hoje, como chegou aqui, para onde vai.
     bio: [
       "Sou estudante de Ciência da Computação na UFABC, com cerca de um ano de experiência em análise de dados e automação de processos.",
-      "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas — e Power BI quando o número precisa virar decisão. Aplico isso hoje no setor de gás natural, que é onde os processos acontecem. A especialidade é outra: extrair, conciliar e analisar dados dispersos é o mesmo problema em qualquer área.",
-      "Em paralelo, estudo segurança da informação: laboratórios de segurança web e prática com ferramentas de análise. Este site é parte desse estudo — a seção de Segurança explica cada proteção que ele usa.",
+      "No dia a dia uso Python e SQL para extrair, limpar e cruzar dados que vivem espalhados em PDFs, e-mails e planilhas, e Power BI quando o número precisa virar decisão. Aplico isso hoje no setor de gás natural, que é onde os processos acontecem. A especialidade é outra: extrair, conciliar e analisar dados dispersos é o mesmo problema em qualquer área.",
+      "Em paralelo, estudo segurança da informação: laboratórios de segurança web e prática com ferramentas de análise. Este site é parte desse estudo: a página de Segurança explica cada proteção que ele usa.",
     ],
     photoAlt: "Vitor Manzotti, de camisa clara, olhando para a câmera",
     education: {
@@ -138,7 +138,7 @@ export const pt: SiteContent = {
             "Pipelines em Python (pdfplumber e expressões regulares) que processam cerca de 200 faturas de gás natural por mês em PDF, com arquitetura modular e testes em lote com faturas reais.",
             "Ferramenta de conciliação de faturas entre Excel e MySQL, com correspondência em duas etapas: por nota fiscal e, quando ela falha, por cliente, fornecedor e período.",
             "Macros VBA integradas ao MySQL via ODBC para importação de volumes diários e carga incremental de faturas, sem registros duplicados.",
-            "Modelagem da precificação de contratos de gás indexados ao IPCA e ao Brent, e planilha de apuração de encargos de transporte (TAG) em Python — que corrigiu uma falha no cálculo de penalidades.",
+            "Modelagem da precificação de contratos de gás indexados ao IPCA e ao Brent, e planilha de apuração de encargos de transporte (TAG) em Python, que corrigiu uma falha no cálculo de penalidades.",
             "Regras de extração campo a campo para um agente de IA de leitura de faturas, e fluxos de e-mail automatizados no Power Automate.",
           ],
         },
@@ -247,7 +247,7 @@ export const pt: SiteContent = {
         id: "api-biblioteca",
         title: "Sistema de gerenciamento de biblioteca",
         problem:
-          "Praticar back-end sobre um domínio real — empréstimo de acervo — em vez de um CRUD de exemplo.",
+          "Praticar back-end sobre um domínio real (empréstimo de acervo) em vez de um CRUD de exemplo.",
         solution:
           "API REST em Java com Spring Boot, persistência em banco SQL e ambiente containerizado.",
         stack: ["Java", "Spring Boot", "SQL", "Docker"],
@@ -262,7 +262,7 @@ export const pt: SiteContent = {
     kicker: "04 / segurança",
     heading: "Segurança da informação",
     intro:
-      "Área que estudo fora do trabalho. Apresento o que estou estudando e, em seguida, como este site foi protegido — porque falar de segurança sem aplicar é fácil.",
+      "É o que eu estudo fora do trabalho. Aqui estão os assuntos que estou vendo agora e as proteções que este site realmente usa. Prefiro mostrar a afirmar.",
 
     studying: {
       heading: "O que estou estudando",
@@ -326,13 +326,13 @@ export const pt: SiteContent = {
           id: "frame-ancestors",
           title: "frame-ancestors 'none'",
           what: "Proíbe que qualquer outro site coloque esta página dentro de um <iframe>.",
-          why: "Impede clickjacking — a técnica de sobrepor uma página invisível à sua para que a vítima clique em algo que não vê.",
+          why: "Impede clickjacking, a técnica de sobrepor uma página invisível à sua para que a vítima clique em algo que não vê.",
           where: "lib/security.ts",
         },
         {
           id: "hsts",
           title: "Strict-Transport-Security (HSTS)",
-          what: "Diz ao navegador para, pelos próximos dois anos, só acessar este domínio por HTTPS — inclusive nos subdomínios.",
+          what: "Diz ao navegador para, pelos próximos dois anos, só acessar este domínio por HTTPS, inclusive nos subdomínios.",
           why: "Fecha a janela do ataque de downgrade: sem HSTS, o primeiro acesso via http:// pode ser interceptado e redirecionado antes de o HTTPS entrar em cena.",
           where: "lib/security.ts",
         },
@@ -346,7 +346,7 @@ export const pt: SiteContent = {
         {
           id: "referrer",
           title: "Referrer-Policy: strict-origin-when-cross-origin",
-          what: "Ao clicar em um link para fora, envia apenas o domínio de origem — nunca o caminho completo nem a query string.",
+          what: "Ao clicar em um link para fora, envia apenas o domínio de origem, nunca o caminho completo nem a query string.",
           why: "Evita vazar em logs de terceiros informação que às vezes vive na URL (tokens, identificadores, termos de busca).",
           where: "lib/security.ts",
         },
@@ -368,7 +368,7 @@ export const pt: SiteContent = {
           id: "validation",
           title: "Validação no servidor com Zod",
           what: "O formulário de contato é validado de novo no servidor: tipo, tamanho mínimo e máximo de cada campo, e formato do e-mail.",
-          why: "Validação no navegador é conveniência de usabilidade, não segurança — qualquer um remove com o DevTools ou envia a requisição direto pelo Burp. A checagem que vale é a do servidor.",
+          why: "Validação no navegador é conveniência de usabilidade, não segurança: qualquer um remove com o DevTools ou envia a requisição direto pelo Burp. A checagem que vale é a do servidor.",
           where: "lib/contact-schema.ts",
         },
         {
@@ -382,7 +382,7 @@ export const pt: SiteContent = {
           id: "honeypot",
           title: "Honeypot anti-bot",
           what: "Existe um campo extra no formulário, invisível para pessoas. Se ele vier preenchido, quem enviou foi um robô.",
-          why: "Filtra spam automatizado sem CAPTCHA — sem cobrar da pessoa um quebra-cabeça e sem embutir script de terceiro na página.",
+          why: "Filtra spam automatizado sem CAPTCHA, sem cobrar da pessoa um quebra-cabeça e sem embutir script de terceiro na página.",
           where: "components/ContactForm.tsx",
         },
         {
@@ -403,7 +403,7 @@ export const pt: SiteContent = {
           id: "secrets",
           title: "Segredos só em variáveis de ambiente",
           what: "Nenhuma chave no código. Tudo que é segredo vive em variável de ambiente, e todo arquivo .env está no .gitignore.",
-          why: "Chave versionada no Git fica no histórico para sempre, mesmo depois de apagada — e bots varrem o GitHub procurando exatamente isso.",
+          why: "Chave versionada no Git fica no histórico para sempre, mesmo depois de apagada. E bots varrem o GitHub procurando exatamente isso.",
           where: ".gitignore",
         },
         {
@@ -444,7 +444,7 @@ export const pt: SiteContent = {
         },
       ],
       disclaimer:
-        "Vale o aviso: nota alta nesses scanners quer dizer que os headers estão certos, não que o site é 100% seguro. Eles não olham lógica de negócio, autenticação nem falha de autorização — isso eu testo manualmente, com Burp Suite e OWASP ZAP.",
+        "Vale o aviso: nota alta nesses scanners quer dizer que os headers estão certos, não que o site é 100% seguro. Eles não olham lógica de negócio, autenticação nem falha de autorização. Isso eu testo manualmente, com Burp Suite e OWASP ZAP.",
     },
   },
 
@@ -478,7 +478,7 @@ export const pt: SiteContent = {
       },
     },
     feedback: {
-      success: "Mensagem recebida. Respondo em breve — obrigado!",
+      success: "Mensagem recebida. Respondo em breve. Obrigado!",
       invalid: "Confira os campos destacados e tente de novo.",
       rateLimited: "Muitas mensagens em pouco tempo. Aguarde alguns minutos e tente novamente.",
       rejected: "Não foi possível enviar esta requisição. Se você usa alguma extensão de privacidade, tente desativá-la nesta página.",
